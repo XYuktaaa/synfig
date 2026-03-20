@@ -47,7 +47,8 @@ public:
   
 private:  
     void sync_glyphs();  // The key method: decomposes text into child layers  
-    void new_font(const synfig::String &family, int style, int weight);  
+    // void new_font(const synfig::String &family, int style, int weight);  
+
 };  
 
 class Layer_GlyphShape : public synfig::Layer_Shape  

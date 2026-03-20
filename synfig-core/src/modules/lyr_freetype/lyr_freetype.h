@@ -123,6 +123,7 @@ public:
 
 	static void shift_contour_chunks(synfig::rendering::Contour::ChunkList &chunks, const synfig::Vector &offset);
 
+	static std::vector<TextLine> fetch_text_lines(const std::string& text, int direction);
 
 protected:
 	synfig::rendering::Task::Handle build_composite_task_vfunc(synfig::ContextParams) const override;
@@ -143,9 +144,7 @@ private:
 
 	void on_param_text_changed();
 
-	static std::vector<TextLine> fetch_text_lines(const std::string& text, int direction);
-
-	synfig::Point world_to_contour(const synfig::Point& p) const;
+		synfig::Point world_to_contour(const synfig::Point& p) const;
 	synfig::Point contour_to_world(const synfig::Point& p) const;
 
 	enum SyncFlags {
