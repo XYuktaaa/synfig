@@ -1,0 +1,50 @@
+grep -rn "LayerParamSet" synfig-studio/
+synfig-studio/src/synfigapp/action.cpp:210:	ADD_ACTION(Action::LayerParamSet);
+synfig-studio/src/synfigapp/action.cpp:211:	ADD_ACTION(Action::LayerParamSetStatic);
+synfig-studio/src/synfigapp/actions/valuedescexport.cpp:292:			// action: LayerParamSet
+synfig-studio/src/synfigapp/actions/valuedescexport.cpp:293:			Action::Handle action(LayerParamSet::create());
+synfig-studio/src/synfigapp/actions/valuedescset.cpp:970:			Action::Handle layer_param_set(LayerParamSet::create());
+synfig-studio/src/synfigapp/actions/layerextract.cpp:171:		Action::Handle action(Action::create("LayerParamSet"));
+synfig-studio/src/synfigapp/actions/layerparamsetstatic.cpp:51:ACTION_INIT(Action::LayerParamSetStatic);
+synfig-studio/src/synfigapp/actions/layerparamsetstatic.cpp:52:ACTION_SET_NAME(Action::LayerParamSetStatic,"LayerParamSetStatic");
+synfig-studio/src/synfigapp/actions/layerparamsetstatic.cpp:53:ACTION_SET_LOCAL_NAME(Action::LayerParamSetStatic,N_("Forbid Animation"));
+synfig-studio/src/synfigapp/actions/layerparamsetstatic.cpp:54:ACTION_SET_TASK(Action::LayerParamSetStatic,"setstatic");
+synfig-studio/src/synfigapp/actions/layerparamsetstatic.cpp:55:ACTION_SET_CATEGORY(Action::LayerParamSetStatic,Action::CATEGORY_VALUEDESC);
+synfig-studio/src/synfigapp/actions/layerparamsetstatic.cpp:56:ACTION_SET_PRIORITY(Action::LayerParamSetStatic,0);
+synfig-studio/src/synfigapp/actions/layerparamsetstatic.cpp:57:ACTION_SET_VERSION(Action::LayerParamSetStatic,"0.0");
+synfig-studio/src/synfigapp/actions/layerparamsetstatic.cpp:65:Action::LayerParamSetStatic::LayerParamSetStatic():
+synfig-studio/src/synfigapp/actions/layerparamsetstatic.cpp:70:Action::LayerParamSetStatic::get_param_vocab()
+synfig-studio/src/synfigapp/actions/layerparamsetstatic.cpp:82:Action::LayerParamSetStatic::is_candidate(const ParamList &x)
+synfig-studio/src/synfigapp/actions/layerparamsetstatic.cpp:119:Action::LayerParamSetStatic::set_param(const synfig::String& name, const Action::Param &param)
+synfig-studio/src/synfigapp/actions/layerparamsetstatic.cpp:151:Action::LayerParamSetStatic::is_ready()const
+synfig-studio/src/synfigapp/actions/layerparamsetstatic.cpp:160:Action::LayerParamSetStatic::perform()
+synfig-studio/src/synfigapp/actions/layerparamsetstatic.cpp:181:Action::LayerParamSetStatic::undo()
+synfig-studio/src/synfigapp/actions/layerparamset.h:48:class LayerParamSet :
+synfig-studio/src/synfigapp/actions/layerparamset.h:62:	LayerParamSet();
+synfig-studio/src/synfigapp/actions/layerembed.cpp:235:		Action::Handle action(Action::create("LayerParamSet"));
+synfig-studio/src/synfigapp/actions/layerparamsetstatic.h:49:class LayerParamSetStatic :
+synfig-studio/src/synfigapp/actions/layerparamsetstatic.h:62:	LayerParamSetStatic();
+synfig-studio/src/synfigapp/actions/layerparamset.cpp:50:ACTION_INIT(Action::LayerParamSet);
+synfig-studio/src/synfigapp/actions/layerparamset.cpp:51:ACTION_SET_NAME(Action::LayerParamSet,"LayerParamSet");
+synfig-studio/src/synfigapp/actions/layerparamset.cpp:52:ACTION_SET_LOCAL_NAME(Action::LayerParamSet,N_("Set Layer Parameter"));
+synfig-studio/src/synfigapp/actions/layerparamset.cpp:53:ACTION_SET_TASK(Action::LayerParamSet,"set");
+synfig-studio/src/synfigapp/actions/layerparamset.cpp:54:ACTION_SET_CATEGORY(Action::LayerParamSet,Action::CATEGORY_LAYER);
+synfig-studio/src/synfigapp/actions/layerparamset.cpp:55:ACTION_SET_PRIORITY(Action::LayerParamSet,0);
+synfig-studio/src/synfigapp/actions/layerparamset.cpp:56:ACTION_SET_VERSION(Action::LayerParamSet,"0.0");
+synfig-studio/src/synfigapp/actions/layerparamset.cpp:64:Action::LayerParamSet::LayerParamSet()
+synfig-studio/src/synfigapp/actions/layerparamset.cpp:69:Action::LayerParamSet::get_param_vocab()
+synfig-studio/src/synfigapp/actions/layerparamset.cpp:89:Action::LayerParamSet::is_candidate(const ParamList &x)
+synfig-studio/src/synfigapp/actions/layerparamset.cpp:95:Action::LayerParamSet::set_param(const synfig::String& name, const Action::Param &param)
+synfig-studio/src/synfigapp/actions/layerparamset.cpp:122:Action::LayerParamSet::is_ready()const
+synfig-studio/src/synfigapp/actions/layerparamset.cpp:130:Action::LayerParamSet::perform()
+synfig-studio/src/synfigapp/actions/layerparamset.cpp:159:Action::LayerParamSet::undo()
+synfig-studio/src/synfigapp/instance.cpp:210:				Action::Handle action(Action::LayerParamSet::create());
+synfig-studio/src/gui/app.cpp:3805:		synfigapp::Action::Handle action_LayerParamSet(synfigapp::Action::create("LayerParamSet"));
+synfig-studio/src/gui/app.cpp:3806:		if (action_LayerParamSet) {
+synfig-studio/src/gui/app.cpp:3807:			action_LayerParamSet->set_param("canvas",           canvas);
+synfig-studio/src/gui/app.cpp:3808:			action_LayerParamSet->set_param("canvas_interface", instance->find_canvas_interface(canvas));
+synfig-studio/src/gui/app.cpp:3809:			action_LayerParamSet->set_param("layer",            layer);
+synfig-studio/src/gui/app.cpp:3810:			action_LayerParamSet->set_param("param",            "color");
+synfig-studio/src/gui/app.cpp:3811:			action_LayerParamSet->set_param("new_value",        ValueBase(App::default_background_layer_color));
+synfig-studio/src/gui/app.cpp:3812:			App::get_selected_canvas_view()->canvas_interface()->get_instance()->perform_action(action_LayerParamSet);
+

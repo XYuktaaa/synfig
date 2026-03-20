@@ -783,11 +783,11 @@ CellRenderer_ValueBase::on_value_editing_done()
             canvas_interface &&
             has_flag(canvas_interface->get_mode(), synfigapp::MODE_ANIMATE))
         {
-        canvas_interface->get_ui_interface()->error(
-            _("Cannot change bone parent in Animation Mode.\n"
-              "Please disable Animation Mode before changing bone hierarchy."));
-        return;
-    }
+            canvas_interface->get_ui_interface()->error(
+                _("Cannot change bone parent in Animation Mode.\n"
+                "Please disable Animation Mode before changing bone hierarchy."));
+             return;
+        }
 
 		if (saved_data != value)
 			signal_edited_(value_entry->get_path(), value);

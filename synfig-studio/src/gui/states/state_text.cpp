@@ -123,6 +123,9 @@ class studio::StateText_Context
 
 	Gtk::Label paragraph_label;
 	Gtk::CheckButton paragraph_checkbutton;
+	Gtk::Label per_char_label;
+	Gtk::CheckButton per_char_checkbutton;
+	Gtk::Box per_char_box;
 	Gtk::Box paragraph_box;
 
 public:
@@ -401,6 +404,11 @@ StateText_Context::StateText_Context(CanvasView *canvasView):
 	paragraph_label.set_valign(Gtk::ALIGN_CENTER);
 	paragraph_box.pack_start(paragraph_label, true, true, 0);
 	paragraph_box.pack_start(paragraph_checkbutton, false, false, 0);
+	per_char_label.set_label(_("Per-character animation"));
+	per_char_label.set_halign(Gtk::ALIGN_START);
+	per_char_label.set_valign(Gtk::ALIGN_CENTER);
+	per_char_box.pack_start(per_char_label, true, true, 0);
+	per_char_box.pack_start(per_char_checkbutton, false, false, 0);
 
 	// Toolbox layout
 	options_grid.attach(title_label,
@@ -421,6 +429,8 @@ StateText_Context::StateText_Context(CanvasView *canvasView):
 		1, 5, 1, 1);
 	options_grid.attach(family_label,
 		0, 6, 1, 1);
+	options_grid.attach(per_char_box, 
+		0, 10, 2, 1);
 	options_grid.attach(fontfamily_widget,
 		1, 6, 1, 1);
 	options_grid.attach(size_label,
@@ -551,7 +561,11 @@ StateText_Context::make_text(const Point& _point)
 	}
 
 	egress_on_selection_change=false;
-	layer=get_canvas_interface()->add_layer_to("text",canvas,depth);
+	// layer=get_canvas_interface()->add_layer_to("text",canvas,depth);
+	const bool per_char = per_char_checkbutton.get_active();
+	layer = get_canvas_interface()->add_layer_to(
+    	per_char ? "text_group" : "text", canvas, depth);
+
 	egress_on_selection_change=true;
 	if (!layer)
 	{
@@ -559,6 +573,12 @@ StateText_Context::make_text(const Point& _point)
 		group.cancel();
 		return;
 	}
+	if (!per_char) {
+    layer->set_param("orient", get_orientation());
+    get_canvas_interface()->signal_layer_param_changed()(layer, "orient");
+    layer->set_param("family", get_family());
+    get_canvas_interface()->signal_layer_param_changed()(layer, "family");
+}
 	layer_selection.push_back(layer);
 
 	layer->set_param("blend_method", blend_param_value);
@@ -576,11 +596,11 @@ StateText_Context::make_text(const Point& _point)
 	layer->set_param("size",get_size());
 	get_canvas_interface()->signal_layer_param_changed()(layer,"size");
 
-	layer->set_param("orient",get_orientation());
-	get_canvas_interface()->signal_layer_param_changed()(layer,"orient");
+	// layer->set_param("orient",get_orientation());
+	// get_canvas_interface()->signal_layer_param_changed()(layer,"orient");
 
-	layer->set_param("family",get_family());
-	get_canvas_interface()->signal_layer_param_changed()(layer,"family");
+	// layer->set_param("family",get_family());
+	// get_canvas_interface()->signal_layer_param_changed()(layer,"family");
 	/*
 	layer->set_description(get_id());
 	get_canvas_interface()->signal_layer_new_description()(layer,layer->get_description());

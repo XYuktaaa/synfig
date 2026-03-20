@@ -3,6 +3,7 @@ lyr_freetype
 mod_geometry
 mod_gradient
 mod_particle
+mod_textgroup
 
 mod_example
 mod_gif
@@ -21,3 +22,4 @@ mod_jpeg
 mod_libavcodec
 mod_yuv420p
 mod_svg
+

@@ -1,0 +1,1408 @@
+grep -rn "set_value\|Widget_BoneChooser" \
+    /home/yukta/devel/gs/synfig.git/synfig-studio/src/ \
+    --include="*.cpp" \
+    | grep -v "widget_bonechooser.cpp" \
+    | grep -v "^Binary"
+me/yukta/devel/gs/synfig.git/synfig-studio/src/ \
+    --include="*.cpp" \
+    | grep -v "widget_bonechooser.cpp" \
+    | grep -v "^Binary"
+(got nothing)
+grep -rn "Widget_BoneChooser" \
+    /home/yukta/devel/gs/synfig.git/synfig-studio/src/ \
+    --include="*.cpp" --include="*.h"
+grep -rn "set_value(" \
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/ \
+--include="*.cpp" --include="*.h" \
+| grep -v widget_bonechooser.cppdash: 17: Syntax error: "(" unexpected
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/settings.cpp:122:Settings::set_value(const synfig::String& key,const synfig::String& value)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/settings.cpp:133:			return iter->second->set_value(key_,value);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/settings.cpp:254:					if(!set_value(key,value))
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/settings.cpp:335:Settings::set_value(const synfig::String &key, double value)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/settings.cpp:342:	return set_value(key, v);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/settings.cpp:346:Settings::set_value(const synfig::String &key, int value)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/settings.cpp:348:	return set_value(key, strprintf("%d", value));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/settings.cpp:352:Settings::set_value(const synfig::String &key, bool value)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/settings.cpp:354:	return set_value(key, value? "1" : "0");
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/settings.cpp:358:Settings::set_value(const synfig::String &key, const synfig::Distance &value)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/settings.cpp:361:	return set_value(key, value.get_string(8));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/settings.cpp:365:Settings::set_value(const synfig::String &key, const synfig::filesystem::Path& value)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/settings.cpp:367:	return set_value(key, value.u8string());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/settings.cpp:371:Settings::set_value(const synfig::String &key, const char *value)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/settings.cpp:373:	return set_value(key, String(value));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/inputdevice.cpp:148:	virtual bool set_value(const synfig::String& key,const synfig::String& value) override
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/inputdevice.cpp:204:		return Settings::set_value(key, value);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/settings.h:66:	virtual bool set_value(const synfig::String& key,const synfig::String& value);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/settings.h:78:	bool set_value(const synfig::String& key, double value);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/settings.h:79:	bool set_value(const synfig::String& key, int value);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/settings.h:80:	bool set_value(const synfig::String& key, bool value);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/settings.h:81:	bool set_value(const synfig::String& key, const synfig::Distance& value);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/settings.h:82:	bool set_value(const synfig::String& key, const synfig::filesystem::Path& value);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/settings.h:83:	bool set_value(const synfig::String& key, const char* value);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/settings.h:85:	template <typename T> bool set_value(const synfig::String& key, T value) = delete;
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/keyframewaypointset.cpp:169:				waypoint.set_value((*value_node)(keyframe.get_time()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/keyframeset.cpp:342:					waypoint.set_value((*value_node_animated)(old_time));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/valuedescset.cpp:872:		waypoint.set_value(value);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/valuedescset.cpp:949:						waypoint.set_value(waypoint_value);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/waypointadd.cpp:166:		waypoint.set_value((*value_node)(time));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/waypointadd.cpp:181:		waypoint.set_value((*value_node)(time));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/waypointsetsmart.cpp:229:		waypoint.set_value((*value_node)(time));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/waypointsetsmart.cpp:244:		waypoint.set_value((*value_node)(time));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/waypointsetsmart.cpp:307:						tmp.set_value(waypoint.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/waypointsetsmart.cpp:370:						tmp.set_value(waypoint.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/valuenodeconstset.cpp:134:	value_node->set_value(new_value);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/valuenodeconstset.cpp:148:	value_node->set_value(old_value);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/instance.cpp:400:					value_node->set_value(new_filename);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/instance.cpp:507:		i->first->set_value(i->second);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rotate.cpp:179:		settings.set_value("rotate.scale",get_scale_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:178:	void set_blend(int x) { return blend_enum.set_value(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:181:	void set_opacity(Real x) { opacity_hscl.set_value(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:189:	void set_bline_width(Distance x) { return bline_width_dist.set_value(x);}
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:197:	void set_feather_size(Distance x) { return feather_dist.set_value(x);}
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:200:	void set_number_of_bline_points(Real f) { number_of_bline_points_adj->set_value(f); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:203:	void set_bline_point_angle_offset(Real f) { bline_point_angle_offset_adj->set_value(f); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:358:		settings.set_value("circle.id",get_id());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:359:		settings.set_value("circle.blend",get_blend());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:360:		settings.set_value("circle.opacity",get_opacity());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:361:		settings.set_value("circle.bline_width", bline_width_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:362:		settings.set_value("circle.feather", feather_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:363:		settings.set_value("circle.number_of_bline_points",(int)(get_number_of_bline_points() + 0.5));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:364:		settings.set_value("circle.bline_point_angle_offset",get_bline_point_angle_offset());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:365:		settings.set_value("circle.invert",get_invert());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:366:		settings.set_value("circle.layer_circle",get_layer_circle_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:367:		settings.set_value("circle.layer_outline",get_layer_outline_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:368:		settings.set_value("circle.layer_advanced_outline",get_layer_advanced_outline_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:369:		settings.set_value("circle.layer_region",get_layer_region_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:370:		settings.set_value("circle.layer_curve_gradient",get_layer_curve_gradient_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:371:		settings.set_value("circle.layer_plant",get_layer_plant_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:372:		settings.set_value("circle.layer_link_origins",get_layer_link_origins_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:373:		settings.set_value("circle.layer_origins_at_center",get_layer_origins_at_center_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bone.cpp:145:	void set_skel_bone_width(Distance x){ skel_bone_width_dist.set_value(x);}
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bone.cpp:153:	void set_skel_deform_bone_width(Distance x){ skel_deform_bone_width_dist.set_value(x);}
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bone.cpp:261:			settings.set_value("bone.skel_id",get_id());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bone.cpp:263:			settings.set_value("bone.skel_deform_id",get_id());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bone.cpp:265:		settings.set_value("bone.skel_bone_width",skel_bone_width_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bone.cpp:266:		settings.set_value("bone.skel_deform_bone_width",skel_deform_bone_width_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:239:	void set_opacity(Real x) { opacity_hscl.set_value(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:247:	void set_bline_width(Distance x) { return bline_width_dist.set_value(x);}
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:274:	void set_min_pressure(Real x) { return min_pressure_adj->set_value(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:280:	void set_feather_size(Distance x) { return feather_dist.set_value(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:283:	void set_gthres(Real x) { return globalthres_adj->set_value(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:286:	void set_lthres(Real x) { return localthres_adj->set_value(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:289:	void set_width_max_error(Real x) { return width_max_error_adj->set_value(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:427:		settings.set_value("lasso.id",get_id());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:428:		settings.set_value("lasso.blend",int(Color::BLEND_ALPHA_OVER));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:429:		settings.set_value("lasso.opacity",get_opacity());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:430:		settings.set_value("lasso.bline_width", bline_width_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:431:		settings.set_value("lasso.pressure_width",get_pressure_width_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:432:		settings.set_value("lasso.auto_loop",get_auto_loop_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:433:		settings.set_value("lasso.auto_extend",get_auto_extend_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:434:		settings.set_value("lasso.auto_link",get_auto_link_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:435:		settings.set_value("lasso.region",get_layer_region_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:436:		settings.set_value("lasso.outline",get_layer_outline_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:437:		settings.set_value("lasso.advanced_outline",get_layer_advanced_outline_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:438:		settings.set_value("lasso.auto_export",get_auto_export_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:439:		settings.set_value("lasso.min_pressure",get_min_pressure());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:440:		settings.set_value("lasso.feather",feather_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:441:		settings.set_value("lasso.min_pressure_on",get_min_pressure_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:442:		settings.set_value("lasso.gthreshold",get_gthres());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:443:		settings.set_value("lasso.widthmaxerror",get_width_max_error());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:444:		settings.set_value("lasso.lthreshold",get_lthres());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:445:		settings.set_value("lasso.localize",get_local_threshold_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:446:		settings.set_value("lasso.round_ends", get_round_ends_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_text.cpp:137:	void set_blend(int x) { return blend_enum.set_value(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_text.cpp:140:	void set_opacity(Real x) { opacity_hscl.set_value(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_text.cpp:146:	void set_size(Vector s) { return size_widget.set_value(s); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_text.cpp:149:	void set_orientation(Vector s) { return orientation_widget.set_value(s); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_text.cpp:152:	void set_family(String s) { return fontfamily_widget.set_value(s); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_text.cpp:259:		settings.set_value("text.id",get_id());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_text.cpp:260:		settings.set_value("text.layer_polygon",get_layer_text_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_text.cpp:261:		settings.set_value("text.blend",get_blend());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_text.cpp:262:		settings.set_value("text.opacity",get_opacity());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_text.cpp:263:		settings.set_value("text.paragraph",get_paragraph_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_text.cpp:264:		settings.set_value("text.size_x",get_size()[0]);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_text.cpp:265:		settings.set_value("text.size_y",get_size()[1]);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_text.cpp:266:		settings.set_value("text.orient_x",get_orientation()[0]);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_text.cpp:267:		settings.set_value("text.orient_y",get_orientation()[1]);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_text.cpp:268:		settings.set_value("text.family",get_family());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:193:	void set_blend(int x) { return blend_enum.set_value(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:196:	void set_opacity(Real x) { opacity_hscl.set_value(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:204:	void set_bline_width(Distance x) { return bline_width_dist.set_value(x);}
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:212:	void set_feather_size(Distance x) { return feather_dist.set_value(x);}
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:215:	void set_number_of_points(Real f) { number_of_points_adj->set_value(f); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:218:	void set_inner_tangent(Real f) { inner_tangent_adj->set_value(f); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:221:	void set_outer_tangent(Real f) { outer_tangent_adj->set_value(f); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:224:	void set_inner_width(Real f) { inner_width_adj->set_value(f); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:227:	void set_outer_width(Real f) { outer_width_adj->set_value(f); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:230:	void set_radius_ratio(Real f) { radius_ratio_adj->set_value(f); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:233:	void set_angle_offset(Real f) { angle_offset_adj->set_value(f); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:403:		settings.set_value("star.id",get_id());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:404:		settings.set_value("star.blend",get_blend());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:405:		settings.set_value("star.opacity",get_opacity());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:406:		settings.set_value("star.bline_width", bline_width_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:407:		settings.set_value("star.feather", feather_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:408:		settings.set_value("star.number_of_points",(int)(get_number_of_points() + 0.5));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:409:		settings.set_value("star.inner_tangent",get_inner_tangent());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:410:		settings.set_value("star.outer_tangent",get_outer_tangent());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:411:		settings.set_value("star.inner_width",get_inner_width());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:412:		settings.set_value("star.outer_width",get_outer_width());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:413:		settings.set_value("star.radius_ratio",get_radius_ratio());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:414:		//settings.set_value("star.angle_offset",get_angle_offset()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:415:		settings.set_value("star.invert",get_invert());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:416:		settings.set_value("star.regular_polygon",get_regular_polygon());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:417:		settings.set_value("star.layer_star",get_layer_star_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:418:		settings.set_value("star.layer_outline",get_layer_outline_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:419:		settings.set_value("star.layer_advanced_outline",get_layer_advanced_outline_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:420:		settings.set_value("star.layer_region",get_layer_region_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:421:		settings.set_value("star.layer_curve_gradient",get_layer_curve_gradient_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:422:		settings.set_value("star.layer_plant",get_layer_plant_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:423:		settings.set_value("star.layer_link_origins",get_layer_link_origins_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:424:		settings.set_value("star.layer_origins_at_center",get_layer_origins_at_center_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_scale.cpp:168:		settings.set_value("scale.lock_aspect",get_aspect_lock_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_smoothmove.cpp:115:	void set_radius(float x) { return adj_radius->set_value(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_smoothmove.cpp:174:		settings.set_value("smooth_move.radius",double(get_radius()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:160:	void set_blend(int x) { return blend_enum.set_value(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:163:	void set_opacity(Real x) { opacity_hscl.set_value(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:171:	void set_bline_width(Distance x) { return bline_width_dist.set_value(x);}
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:179:	void set_feather_size(Distance x) { return feather_dist.set_value(x);}
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:187:	void set_expand_size(Distance x) { return expand_dist.set_value(x);}
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:334:		settings.set_value("rectangle.id",get_id());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:335:		settings.set_value("rectangle.blend",get_blend());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:336:		settings.set_value("rectangle.opacity",get_opacity());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:337:		settings.set_value("rectangle.bline_width", bline_width_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:338:		settings.set_value("rectangle.expand",expand_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:339:		settings.set_value("rectangle.feather", feather_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:340:		settings.set_value("rectangle.invert",get_invert());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:341:		settings.set_value("rectangle.layer_rectangle",get_layer_rectangle_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:342:		settings.set_value("rectangle.layer_outline",get_layer_outline_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:343:		settings.set_value("rectangle.layer_advanced_outline",get_layer_advanced_outline_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:344:		settings.set_value("rectangle.layer_region",get_layer_region_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:345:		settings.set_value("rectangle.layer_curve_gradient",get_layer_curve_gradient_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:346:		settings.set_value("rectangle.layer_plant",get_layer_plant_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:347:		settings.set_value("rectangle.layer_link_origins",get_layer_link_origins_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_gradient.cpp:125:	void set_blend(int x) { return blend_enum.set_value(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_gradient.cpp:128:	void set_opacity(Real x) { opacity_hscl.set_value(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_gradient.cpp:273:		settings.set_value("gradient.id",get_id());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_gradient.cpp:274:		settings.set_value("gradient.layer_linear_gradient",get_layer_linear_gradient_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_gradient.cpp:275:		settings.set_value("gradient.layer_radial_gradient",get_layer_radial_gradient_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_gradient.cpp:276:		settings.set_value("gradient.layer_conical_gradient",get_layer_conical_gradient_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_gradient.cpp:277:		settings.set_value("gradient.layer_spiral_gradient",get_layer_spiral_gradient_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_gradient.cpp:278:		settings.set_value("gradient.blend",get_blend());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_gradient.cpp:279:		settings.set_value("gradient.opacity",get_opacity());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:158:	void set_blend(int x) { return blend_enum.set_value(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:161:	void set_opacity(Real x) { opacity_hscl.set_value(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:169:	void set_bline_width(Distance x) { return bline_width_dist.set_value(x);}
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:177:	void set_feather_size(Distance x) { return feather_dist.set_value(x);}
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:319:		settings.set_value("polygon.id",get_id());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:320:		settings.set_value("polygon.blend",get_blend());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:321:		settings.set_value("polygon.opacity",get_opacity());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:322:		settings.set_value("polygon.bline_width", bline_width_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:323:		settings.set_value("polygon.feather", feather_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:324:		settings.set_value("polygon.invert",get_invert());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:325:		settings.set_value("polygon.layer_polygon",get_layer_polygon_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:326:		settings.set_value("polygon.layer_outline",get_layer_outline_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:327:		settings.set_value("polygon.layer_advanced_outline",get_layer_advanced_outline_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:328:		settings.set_value("polygon.layer_region",get_layer_region_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:329:		settings.set_value("polygon.layer_curve_gradient",get_layer_curve_gradient_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:330:		settings.set_value("polygon.layer_plant",get_layer_plant_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:331:		settings.set_value("polygon.layer_link_origins",get_layer_link_origins_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:191:	void set_blend(int x) { return blend_enum.set_value(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:194:	void set_opacity(Real x) { opacity_hscl.set_value(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:202:	void set_bline_width(Distance x) { return bline_width_dist.set_value(x);}
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:210:	void set_feather_size(Distance x) { return feather_dist.set_value(x);}
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:377:		settings.set_value("bline.id",get_id());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:378:		settings.set_value("bline.layer_outline",get_layer_outline_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:379:		settings.set_value("bline.layer_advanced_outline",get_layer_advanced_outline_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:380:		settings.set_value("bline.layer_region",get_layer_region_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:381:		settings.set_value("bline.layer_curve_gradient",get_layer_curve_gradient_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:382:		settings.set_value("bline.layer_plant",get_layer_plant_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:383:		settings.set_value("bline.layer_link_origins",get_layer_link_origins_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:384:		settings.set_value("bline.blend",get_blend());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:385:		settings.set_value("bline.opacity",get_opacity());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:386:		settings.set_value("bline.bline_width", bline_width_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:387:		settings.set_value("bline.feather", feather_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:388:		settings.set_value("bline.auto_export",get_auto_export_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:1518:	value_node->set_value(bline_point);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:1527:	value_node->set_value(bline_point);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:1560:	value_node->set_value(bline_point);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:1886:	value_node->set_value(bline_point);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:228:	void set_blend(int x) { return blend_enum.set_value(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:231:	void set_opacity(Real x) { opacity_hscl.set_value(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:239:	void set_bline_width(Distance x) { return bline_width_dist.set_value(x);}
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:269:	void set_min_pressure(Real x) { return min_pressure_adj->set_value(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:275:	void set_feather_size(Distance x) { return feather_dist.set_value(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:278:	void set_gthres(Real x) { return globalthres_adj->set_value(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:281:	void set_lthres(Real x) { return localthres_adj->set_value(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:284:	void set_width_max_error(Real x) { return width_max_error_adj->set_value(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:424:		settings.set_value("draw.id",get_id());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:425:		settings.set_value("draw.blend",get_blend());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:426:		settings.set_value("draw.opacity",get_opacity());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:427:		settings.set_value("draw.bline_width", bline_width_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:428:		settings.set_value("draw.pressure_width",get_pressure_width_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:429:		settings.set_value("draw.auto_loop",get_auto_loop_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:430:		settings.set_value("draw.auto_extend",get_auto_extend_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:431:		settings.set_value("draw.auto_link",get_auto_link_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:432:		settings.set_value("draw.region",get_layer_region_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:433:		settings.set_value("draw.outline",get_layer_outline_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:434:		settings.set_value("draw.advanced_outline",get_layer_advanced_outline_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:435:		settings.set_value("draw.layer_link_origins",get_layer_link_origins_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:436:		settings.set_value("draw.auto_export",get_auto_export_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:437:		settings.set_value("draw.min_pressure",get_min_pressure());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:438:		settings.set_value("draw.feather",feather_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:439:		settings.set_value("draw.min_pressure_on",get_min_pressure_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:440:		settings.set_value("draw.gthreshold",get_gthres());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:441:		settings.set_value("draw.widthmaxerror",get_width_max_error());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:442:		settings.set_value("draw.lthreshold",get_lthres());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:443:		settings.set_value("draw.localize",get_local_threshold_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:444:		settings.set_value("draw.round_ends", get_round_ends_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_width.cpp:118:	void set_delta(Real f) { adj_delta->set_value(f); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_width.cpp:121:	void set_radius(Distance f) { influence_radius->set_value(f); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_width.cpp:196:		settings.set_value("width.delta",get_delta());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_width.cpp:197:		settings.set_value("width.radius",influence_radius->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_width.cpp:198:		settings.set_value("width.relative",get_relative());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_brush.cpp:478:		settings.set_value("brush.path_count", (int)App::brushes_path.size());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_brush.cpp:481:			settings.set_value(strprintf("brush.path_%d", j++), path);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_brush.cpp:483:		settings.set_value("brush.selected_brush_filename", selected_brush_config.filename);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_brush.cpp:484:		settings.set_value("brush.eraser", eraser_checkbox.get_active());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dials/framedial.cpp:159:	end_time->set_value(value);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dials/jackdial.cpp:84:	offset_widget->set_value(synfig::Time(0.0));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dials/jackdial.h:62:	void set_offset(const synfig::Time &value)       { offset_widget->set_value(value); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:249:	adjustment_width->set_value(rend_desc_.get_w());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:250:	adjustment_height->set_value(rend_desc_.get_h());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:251:	adjustment_phy_width->set_value(METERS2INCHES(rend_desc_.get_physical_w()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:252:	adjustment_phy_height->set_value(METERS2INCHES(rend_desc_.get_physical_h()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:253:	adjustment_xres->set_value(DPM2DPI(rend_desc_.get_x_res()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:254:	adjustment_yres->set_value(DPM2DPI(rend_desc_.get_y_res()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:264:	entry_tl->set_value(rend_desc_.get_tl());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:265:	entry_br->set_value(rend_desc_.get_br());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:266:	adjustment_span->set_value(rend_desc_.get_span());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:270:	entry_start_time->set_value(rend_desc_.get_time_start());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:272:	entry_end_time->set_value(rend_desc_.get_time_end());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:274:	entry_duration->set_value(rend_desc_.get_duration());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:275:	adjustment_fps->set_value(rend_desc_.get_frame_rate());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:278:	adjustment_gamma_r->set_value(rend_desc_.get_gamma().get_r());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:279:	adjustment_gamma_g->set_value(rend_desc_.get_gamma().get_g());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:280:	adjustment_gamma_b->set_value(rend_desc_.get_gamma().get_b());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:292:	entry_focus->set_value(rend_desc_.get_focus());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/splash.cpp:200:	property_window_position().set_value(Gtk::WIN_POS_CENTER);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/modules/mod_palette/dock_paledit.cpp:94:	virtual bool set_value(const synfig::String& key,const synfig::String& value) override
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/modules/mod_palette/dock_paledit.cpp:478:		widget_color->set_value(get_color(i));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarea.cpp:953:	get_scrollx_adjustment()->set_value(adjusted[0]*x_factor);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarea.cpp:954:	get_scrolly_adjustment()->set_value(adjusted[1]*y_factor);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarea.cpp:1672:				get_scrollx_adjustment()->set_value(scroll_point[0]+(mouse_pos[0]-scroll_point[0])*(1.25-(1+drift)));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarea.cpp:1673:				get_scrolly_adjustment()->set_value(scroll_point[1]-(mouse_pos[1]+scroll_point[1])*(1.25-(1+drift)));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarea.cpp:1678:				get_scrollx_adjustment()->set_value(scroll_point[0]+(mouse_pos[0]-scroll_point[0])*(1/1.25-(1+drift)));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarea.cpp:1679:				get_scrolly_adjustment()->set_value(scroll_point[1]-(mouse_pos[1]+scroll_point[1])*(1/1.25-(1+drift)));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarea.cpp:1696:				get_scrollx_adjustment()->set_value(get_scrollx_adjustment()->get_value()-scroll_pixel*pw);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarea.cpp:1699:				get_scrollx_adjustment()->set_value(get_scrollx_adjustment()->get_value()+scroll_pixel*pw);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarea.cpp:1702:				get_scrolly_adjustment()->set_value(get_scrolly_adjustment()->get_value()+scroll_pixel*ph);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarea.cpp:1705:				get_scrolly_adjustment()->set_value(get_scrolly_adjustment()->get_value()-scroll_pixel*ph);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarea.cpp:1720:				get_scrolly_adjustment()->set_value(get_scrolly_adjustment()->get_value()+scroll_pixel*ph);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarea.cpp:1723:				get_scrolly_adjustment()->set_value(get_scrolly_adjustment()->get_value()-scroll_pixel*ph);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarea.cpp:1726:				get_scrollx_adjustment()->set_value(get_scrollx_adjustment()->get_value()-scroll_pixel*pw);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarea.cpp:1729:				get_scrollx_adjustment()->set_value(get_scrollx_adjustment()->get_value()+scroll_pixel*pw);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/trees/historytreestore.cpp:150:	next_action_iter->set_value(model.is_redo, true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/trees/historytreestore.cpp:151:	next_action_iter->set_value(model.is_undo, false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/trees/historytreestore.cpp:162:	next_action_iter->set_value(model.is_redo, false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/trees/historytreestore.cpp:163:	next_action_iter->set_value(model.is_undo, true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/trees/keyframetree.cpp:161:	cell_renderer_time->property_fps().set_value(keyframe_tree_store_->canvas_interface()->get_canvas()->rend_desc().get_frame_rate());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/trees/keyframetree.cpp:180:	cell_renderer_time->property_fps().set_value(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/trees/keyframetree.cpp:182:	cell_renderer_time_delta->property_fps().set_value(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/cellrenderer/cellrenderer_value.cpp:200:	void set_value(const synfig::ValueBase &data)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/cellrenderer/cellrenderer_value.cpp:203:			valuewidget->set_value(data);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/cellrenderer/cellrenderer_value.cpp:753:		value_entry->set_value(data);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/cellrenderer/cellrenderer_time.cpp:122:	widget_time->set_value(time);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/app.cpp:624:	virtual bool set_value(const synfig::String& key,const synfig::String& value) override
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/app.cpp:816:		return synfigapp::Settings::set_value(key,value);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/app.cpp:2422:			_preferences.set_value(preference, filenames.front().parent_path());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/app.cpp:2474:	_preferences.set_value(preference, filename.parent_path());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/app.cpp:2492:		_preferences.set_value(preference, filename.parent_path());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/app.cpp:2531:		_preferences.set_value(preference, filename.parent_path());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/app.cpp:2563:		_preferences.set_value(preference, filename.parent_path());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/app.cpp:2604:		_preferences.set_value(preference, filesystem::Path(dialog->get_filename()).parent_path());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/app.cpp:2751:		_preferences.set_value(preference, filename.parent_path());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/app.cpp:2854:		_preferences.set_value(preference,filesystem::Path::dirname(filename));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/app.cpp:2907:		file_type_enum->set_value(RELEASE_VERSION_CURRENT); // default to the most recent version
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/app.cpp:2959:		_preferences.set_value(preference, filename.parent_path());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/app.cpp:3002:		_preferences.set_value(preference, filename.parent_path());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/app.cpp:3120:		j->set_value(model_columns.column_index, k++);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/app.cpp:3121:		j->set_value(model_columns.column_main, Glib::ustring(*i));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/helpers.h:186:	ConfigureAdjustment& set_value(double x)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/helpers.h:220:			adjustment->set_value(value);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/helpers.h:241:		.set_value(value)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_soundwave.cpp:181:		delay_widget.set_value(widget_sound.get_delay());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_soundwave.cpp:422:				found_iter->set_value(0, create_layer_item_label(layer_sound));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_soundwave.cpp:429:					delay_widget.set_value(delay);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_soundwave.cpp:445:			found_iter->set_value(0, create_layer_item_label(layer_sound));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dockmanager.cpp:153:	virtual bool set_value(const synfig::String& key_,const synfig::String& value) override
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dockmanager.cpp:163:		return synfigapp::Settings::set_value(key_,value);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_timetrack.cpp:431:		vscrollbar_.get_adjustment()->set_value(0);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_navigator.cpp:98:	adj_zoom->set_value(0);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_navigator.cpp:253:		adj_zoom->set_value(z);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogsettings.h:53:	virtual bool set_value(const synfig::String& key,const synfig::String& value) override;
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:870:	current_time_widget->set_value(get_time());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:1162:		past_onion_spin->set_value(work_area->get_onion_skins()[0]);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:1178:		future_onion_spin->set_value(work_area->get_onion_skins()[1]);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:1327:	current_time_widget->set_value(get_time());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:2100:	current_time_widget->set_value(time);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:3190:		past_onion_spin->set_value(work_area->get_onion_skins()[0]);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:3191:		future_onion_spin->set_value(work_area->get_onion_skins()[1]);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:3656:	{ widget_interpolation->set_value(synfigapp::Main::get_interpolation()); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/preview.cpp:783:				adj_time_scrub->set_value(time);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/preview.cpp:794:			.set_value(time)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/preview.cpp:821:		.set_value(t)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/preview.cpp:914:		//adj_time_scrub->set_value(adj_time_scrub->get_lower());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/preview.cpp:978:	adj_time_scrub->set_value(newtime);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/preview.cpp:1012:	adj_time_scrub->set_value(t);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/onemoment.cpp:76:	wnd->property_window_position().set_value(Gtk::WIN_POS_CENTER);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/vectorizersettings.cpp:154:	adjustment_threshold->set_value(configmap["threshold"]);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/vectorizersettings.cpp:155:	adjustment_accuracy->set_value(configmap["accuracy"]);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/vectorizersettings.cpp:156:	adjustment_despeckling->set_value(configmap["despeckling"]);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/vectorizersettings.cpp:157:	adjustment_maxthickness->set_value(configmap["maxthickness"]);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_spritesheetparam.cpp:113:	offset_x_box->set_value(get_tparam().offset_x);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_spritesheetparam.cpp:114:	offset_y_box->set_value(get_tparam().offset_y);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_spritesheetparam.cpp:115:	rows_box->set_value(get_tparam().rows);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_spritesheetparam.cpp:116:	columns_box->set_value(get_tparam().columns);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_spritesheetparam.cpp:126:	rows_box->set_value(direction_box->get_active_row_number() == 1 ? frame_count : 1);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_spritesheetparam.cpp:128:	columns_box->set_value(direction_box->get_active_row_number() == 0 ? frame_count : 1);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_spritesheetparam.cpp:138:		columns_box->set_value(ceil((double)frame_count / rows_box->get_value()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_spritesheetparam.cpp:148:		rows_box->set_value(ceil((double)frame_count / columns_box->get_value()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/canvasoptions.cpp:141:	vector_grid_size->set_value(canvas_view_->get_work_area()->get_grid_size());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_preview.h:128:	void set_zoom(float z) { adj_zoom->set_value(z); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_preview.h:131:	void set_fps(float z) { adj_fps->set_value(z); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_preview.h:137:	void set_begintime(const synfig::Time &t) { time_begin->set_value(t); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_preview.h:140:	void set_endtime(const synfig::Time &t) { time_end->set_value(t); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_ffmpegparam.cpp:137:	bitrate->set_value(double(get_tparam().bitrate));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_workspaces.cpp:90://		workspace_model->append()->set_value(0, Glib::ustring("ui"));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_workspaces.cpp:209:		workspace_model->append()->set_value(0, name);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_guide.cpp:160:		angle_widget->set_value(synfig::Angle::deg(curr_guide->angle).get());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_guide.cpp:162:		angle_widget->set_value(curr_guide->angle.get());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_gradient.cpp:118:	widget_gradient->set_value(x);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_gradient.cpp:153:	widget_color->set_value(x.color);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_gradient.cpp:154:	adjustment_pos->set_value(x.pos);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_color.cpp:86:	color_edit_widget->set_value(x);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_pasteoptions.cpp:174:	iter->set_value(COLUMN_COPY_OR_NOT, !is_copy);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_pasteoptions.cpp:200:			iter->set_value(COLUMN_COPY_OR_NOT, false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_pasteoptions.cpp:248:	edited_iter->set_value(COLUMN_NAME, new_text);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_pasteoptions.cpp:260:			iter->set_value(COLUMN_COPY_OR_NOT, is_copy_all);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_pasteoptions.cpp:342:		iter->set_value(COLUMN_VALUENODE_POINTER, v.get());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_pasteoptions.cpp:343:		iter->set_value(COLUMN_ORIGINAL_NAME, v->get_id());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_pasteoptions.cpp:344:		iter->set_value(COLUMN_NAME, v->get_id());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_pasteoptions.cpp:345:		iter->set_value(COLUMN_FILE_PATH, strprintf("(%s)", v->get_root_canvas()->get_file_name().c_str()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_pasteoptions.cpp:346:		iter->set_value(COLUMN_VALUE_TYPE, get_tree_pixbuf(v->get_type()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_pasteoptions.cpp:347:		iter->set_value(COLUMN_COPY_OR_NOT, true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_pasteoptions.cpp:348:		iter->set_value(COLUMN_IS_EDITABLE, true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_pasteoptions.cpp:482:	v_iter->set_value(COLUMN_IS_NAME_EDITABLE, will_be_copied);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_pasteoptions.cpp:483:	v_iter->set_value(COLUMN_STATUS, status);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_pasteoptions.cpp:484:	v_iter->set_value(COLUMN_STATUS_ICON, status_icon);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_pasteoptions.cpp:485:	v_iter->set_value(COLUMN_STATUS_TOOLTIP, status_tooltip);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_pasteoptions.cpp:486:	v_iter->set_value(COLUMN_FILE_PATH_VISIBILITY, true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_pasteoptions.cpp:488:		v_iter->set_value(COLUMN_NAME, original_name);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_pasteoptions.cpp:489:	v_iter->set_value(COLUMN_IS_EDITABLE, !is_forced_link);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_pasteoptions.cpp:491:		v_iter->set_value(COLUMN_COPY_OR_NOT, false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_soundselect.h:78:	void set_offset(const synfig::Time &t) {offset.set_value(t); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_soundselect.h:81:	void set_file(const std::string &f) {soundfile.set_value(f); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_canvasdependencies.cpp:276:			row->set_value(0, filename);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_canvasdependencies.cpp:277:			row->set_value(1, pair.second.total);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_canvasdependencies.cpp:278:			row->set_value(3, !Glib::file_test(pair.first, Glib::FILE_TEST_EXISTS | Glib::FILE_TEST_IS_REGULAR));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_canvasdependencies.cpp:283:				child->set_value(0, vn_pair.first->get_id());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_canvasdependencies.cpp:284:				child->set_value(1, vn_pair.second);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_canvasdependencies.cpp:285:				child->set_value(2, get_tree_pixbuf(vn_pair.first->get_type()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_canvasdependencies.cpp:286:				child->set_value(3, false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_canvasdependencies.cpp:295:			row->set_value(0, filename);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_canvasdependencies.cpp:296:			row->set_value(1, pair.second.total);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_canvasdependencies.cpp:316:			row->set_value(2, pixbuf);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_canvasdependencies.cpp:317:			row->set_value(3, !Glib::file_test(pair.first.u8string(), Glib::FILE_TEST_EXISTS | Glib::FILE_TEST_IS_REGULAR));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_soundselect.cpp:100:	offset.set_value(0);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/canvasresize.cpp:280:	width->set_value(x);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/canvasresize.cpp:281:	height->set_value(y);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/canvasresize.cpp:429:	width ->set_value(rend_desc.get_w());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/canvasresize.cpp:430:	height->set_value(rend_desc.get_h());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:550:			current_section_row.set_value(action_short_name_col, current_section_name);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:551:			current_section_row.set_value(action_key_col, guint(0));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:552:			current_section_row.set_value(action_mods_col, Gdk::ModifierType(0));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:553:			current_section_row.set_value(action_is_action_col, false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:562:		row.set_value(action_name_col, action_full_path);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:563:		row.set_value(action_key_col, accel.get_key());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:564:		row.set_value(action_mods_col, accel.get_mod());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:565:		row.set_value(action_short_name_col, action_full_path.substr(separator_pos+1));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:566:		row.set_value(action_is_action_col, true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:609:		problematic_iter->set_value(SHORTCUT_COLUMN_ID_ACTION_KEY, 0);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:610:		problematic_iter->set_value(SHORTCUT_COLUMN_ID_ACTION_MODS, Gdk::ModifierType(0));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:614:	iter->set_value(SHORTCUT_COLUMN_ID_ACTION_KEY, accel_key);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:615:	iter->set_value(SHORTCUT_COLUMN_ID_ACTION_MODS, accel_mods);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:622:	iter->set_value(SHORTCUT_COLUMN_ID_ACTION_KEY, 0);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:623:	iter->set_value(SHORTCUT_COLUMN_ID_ACTION_MODS, Gdk::ModifierType(0));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:650:			row.set_value(SHORTCUT_COLUMN_ID_ACTION_KEY, accel.get_key());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:651:			row.set_value(SHORTCUT_COLUMN_ID_ACTION_MODS, accel.get_mod());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:911:		adj_recent_files->set_value(25);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:914:		auto_backup_interval.set_value(15);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:915:		widget_enum->set_value(Distance::SYSTEM_POINTS);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:925:		adj_pref_x_size->set_value(480);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:926:		adj_pref_y_size->set_value(270);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:929:		adj_pref_fps->set_value(24.0);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:931:		adj_number_of_threads->set_value(std::thread::hardware_concurrency());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1009:	synfigapp::Main::settings().set_value("pref.clear_redo_stack_on_new_action", toggle_clear_redo_stack_on_new_action.get_active());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1035:			input_settings.set_value(strprintf("brush.path_%d", path_count++), path);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1038:		input_settings.set_value("brush.path_count", path_count);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1168:	adj_pref_x_size->set_value(x);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1169:	adj_pref_y_size->set_value(y);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1197:	adj_pref_fps->set_value(atof(selection.c_str()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1268:	adj_recent_files->set_value(App::get_max_recent_files());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1276:	widget_enum->set_value(App::distance_system);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1280:	auto_backup_interval.set_value(App::auto_recover->get_timeout_ms() / 1000);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1373:	adj_pref_x_size->set_value(App::preferred_x_size);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1376:	adj_pref_y_size->set_value(App::preferred_y_size);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1382:	adj_pref_fps->set_value(App::preferred_fps);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1391:	number_of_threads_select->set_value(App::number_of_threads);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1434:				row.set_value(SHORTCUT_COLUMN_ID_ACTION_KEY, accel.get_key());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1435:				row.set_value(SHORTCUT_COLUMN_ID_ACTION_MODS, accel.get_mod());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1437:				row.set_value(SHORTCUT_COLUMN_ID_ACTION_KEY, 0);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1438:				row.set_value(SHORTCUT_COLUMN_ID_ACTION_MODS, Gdk::ModifierType(0));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/helpers.cpp:142:			i->adjustment->set_value(position);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_enum.h:72:	void set_value(int data);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_sublayer.cpp:89:Widget_Sublayer::set_value(const std::string& data)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_timegraphbase.cpp:109:			.set_value(new_range_value)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_timegraphbase.cpp:146:			.set_value(range_adjustment->get_value() - range_adjustment->get_step_increment())
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_timegraphbase.cpp:153:			.set_value(range_adjustment->get_value() + range_adjustment->get_step_increment())
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_timegraphbase.cpp:195:			.set_value(range_adjustment->get_value() - real_dy)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_sublayer.h:56:	void set_value(const std::string &data);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_bonechooser.h:66:	void set_value(synfig::ValueNode_Bone::Handle data);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_fontfamily.h:68:	void set_value(const std::string& data);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_distance.cpp:104:Widget_Distance::set_value(const synfig::Distance &data)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_distance.cpp:107:	get_adjustment()->set_value(distance_.get());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:169:    before_options->set_value((int)x.get_before());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:170:    after_options->set_value((int)x.get_after());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:172:    adj_tension->set_value(x.get_tension());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:173:    adj_continuity->set_value(x.get_continuity());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:174:    adj_bias->set_value(x.get_bias());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:175:    adj_temporal_tension->set_value(x.get_temporal_tension());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:194:    before_options->set_value(0);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:196:    after_options->set_value(0);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:199:    adj_tension->set_value(0);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:200:    adj_continuity->set_value(0);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:201:    adj_bias->set_value(0);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:202:    adj_temporal_tension->set_value(0);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_canvaschooser.h:61:	void set_value(synfig::Canvas::Handle data);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_filename.cpp:92:Widget_Filename::set_value(const std::string &data)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_soundwave.cpp:81:		.set_value((range_max-range_min)/2)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_fontfamily.cpp:172:Widget_FontFamily::set_value(const std::string& data)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_coloredit.cpp:457:	set_value(color);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_coloredit.cpp:504:		set_value(synfigColor);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_coloredit.cpp:531:	set_value(color);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_coloredit.cpp:541:	set_value(color);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_coloredit.cpp:573:	widget_color.set_value(color);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_coloredit.cpp:598:Widget_ColorEdit::set_value(const synfig::Color &data)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_coloredit.cpp:606:	R_adjustment->set_value(color.get_r()*100);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_coloredit.cpp:607:	G_adjustment->set_value(color.get_g()*100);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_coloredit.cpp:608:	B_adjustment->set_value(color.get_b()*100);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_coloredit.cpp:609:	A_adjustment->set_value(color.get_a()*100);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_coloredit.cpp:621:	widget_color.set_value(color);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_vector.h:92:	void set_value(const synfig::Vector &data);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_curves.cpp:1202:					waypoint.set_value(value_base);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_canvaschooser.cpp:72:	set_value(data);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_canvaschooser.cpp:89:Widget_CanvasChooser::set_value(synfig::Canvas::Handle data)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_distance.h:60:	void set_value(const synfig::Distance &data);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.h:106:	void set_value(const synfig::ValueBase &data);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypoint.cpp:207:		value_widget->set_value(waypoint.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypoint.cpp:217:	time_widget->set_value(waypoint.get_time());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypoint.cpp:219:	before_options->set_value((Waypoint::Interpolation)waypoint.get_before());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypoint.cpp:220:	after_options->set_value((Waypoint::Interpolation)waypoint.get_after());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypoint.cpp:243:		waypoint.set_value(value_widget->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypoint.cpp:260:		adj_tension->set_value(waypoint.get_tension());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypoint.cpp:261:		adj_continuity->set_value(waypoint.get_continuity());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypoint.cpp:262:		adj_bias->set_value(waypoint.get_bias());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypoint.cpp:263:		adj_temporal_tension->set_value(waypoint.get_temporal_tension());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:236:Widget_ValueBase::set_value(const synfig::ValueBase &data)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:262:			vector_widget->set_value(value.get(Vector()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:272:				distance_widget->set_value(dist);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:277:				real_widget->set_value(value.get(Real()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:285:			time_widget->set_value(value.get(Time()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:291:			angle_widget->set_value(Angle::deg(value.get(Angle())).get());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:301:				integer_widget->set_value(value.get(int()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:310:				enum_widget->set_value(value.get(int()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:320:			bone_widget->set_value(value.get(etl::loose_handle<synfig::ValueNode_Bone>()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:328:			canvas_widget->set_value(value.get(Canvas::LooseHandle()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:342:				filename_widget->set_value(value.get(std::string()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:348:				sublayer_widget->set_value(value.get(std::string()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:353:				fontfamily_widget->set_value(value.get(std::string()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:365:			color_widget->set_value(value.get(synfig::Color()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_gradient.cpp:233:Widget_Gradient::set_value(const synfig::Gradient& x)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_color.cpp:137:Widget_Color::set_value(const synfig::Color &x)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_filename.h:65:	void set_value(const  std::string &data);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_gradient.h:78:	void set_value(const synfig::Gradient& x);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_coloredit.h:189:	void set_value(const synfig::Color &data);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_time.cpp:94:Widget_Time::set_value(const synfig::Time &data)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_vector.cpp:184:Widget_Vector::set_value(const synfig::Vector &data)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_vector.cpp:193:		distance_x->set_value(distx);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_vector.cpp:194:		distance_y->set_value(disty);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_vector.cpp:199:	}catch(...) { synfig::error("Widget_Vector::set_value(): Caught something that was thrown"); }}
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_vector.cpp:202:		spinbutton_x->set_value(vector[0]);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_vector.cpp:203:		spinbutton_y->set_value(vector[1]);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_vector.cpp:231:	}catch(...) { synfig::error("Widget_Vector::set_value(): Caught something that was thrown"); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_vector.cpp:242:		distance_x->set_value(distx);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_vector.cpp:246:		spinbutton_x->set_value(atof(entry_x->get_text().c_str()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_vector.cpp:247:	}catch(...) { synfig::error("Widget_Vector::set_value(): Caught something that was thrown"); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_vector.cpp:257:		distance_y->set_value(disty);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_vector.cpp:261:		spinbutton_y->set_value(atof(entry_y->get_text().c_str()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_vector.cpp:262:	}catch(...) { synfig::error("Widget_Vector::set_value(): Caught something that was thrown"); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_enum.cpp:71:	text->property_ellipsize().set_value(Pango::ELLIPSIZE_END);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_enum.cpp:124:Widget_Enum::set_value(int data)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_defaults.cpp:421:	widget_outline_color->set_value(synfigapp::Main::get_outline_color());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_defaults.cpp:427:	widget_fill_color->set_value(synfigapp::Main::get_fill_color());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_defaults.cpp:433:	widget_gradient->set_value(synfigapp::Main::get_gradient());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_defaults.cpp:439:	widget_bline_width->set_value(synfigapp::Main::get_bline_width());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_defaults.cpp:447:	widget_blend_method->set_value(synfigapp::Main::get_blend_method());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_defaults.cpp:453:	widget_opacity->set_value(synfigapp::Main::get_opacity());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_color.h:63:	void set_value(const synfig::Color &x);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_time.h:71:	void set_value(const synfig::Time &data);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogsettings.cpp:119:DialogSettings::set_value(const synfig::String& key,const synfig::String& value)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogsettings.cpp:194:	return synfigapp::Settings::set_value(key,value);
+grep -rn "Widget_BoneChooser" \
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/ \
+--include="*.cpp" --include="*.h"grep: grep: No such file or directory
+grep: Widget_BoneChooser: No such file or directory
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_bonechooser.cpp:56:Widget_BoneChooser::Widget_BoneChooser(): is_updating_(false){ }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_bonechooser.cpp:57:Widget_BoneChooser::~Widget_BoneChooser() { }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_bonechooser.cpp:60:Widget_BoneChooser::set_parent_canvas(synfig::Canvas::Handle x)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_bonechooser.cpp:67:Widget_BoneChooser::set_value_(synfig::ValueNode_Bone::Handle data)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_bonechooser.cpp:69:	printf("%s:%d Widget_BoneChooser::set_value_ data = %lx\n", __FILE__, __LINE__, uintptr_t(data.get()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_bonechooser.cpp:75:Widget_BoneChooser::on_changed()
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_bonechooser.cpp:86:Widget_BoneChooser::set_value(synfig::ValueNode_Bone::Handle data)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_bonechooser.cpp:157:Widget_BoneChooser::get_value()
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_bonechooser.h:47:class Widget_BoneChooser : public Gtk::ComboBoxText
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_bonechooser.h:62:	Widget_BoneChooser();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_bonechooser.h:63:	~Widget_BoneChooser();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_bonechooser.h:72:}; // END of class Widget_BoneChooser
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.h:53:class Widget_BoneChooser;
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.h:79:	Widget_BoneChooser *bone_widget;
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:111:	bone_widget=manage(new class Widget_BoneChooser());
+grep -rn "signal_changed" \
+/home/yukta/devel/gs/synfig.git/synfig-studio/src//home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/timemodel.cpp:67:	full_time_adjustment_->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/timemodel.cpp:72:	scroll_time_adjustment_->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/timemodel.cpp:77:	play_bounds_adjustment_->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarearenderer/workarearenderer.h:60:	sigc::signal<void> signal_changed_;
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarearenderer/workarearenderer.h:66:	sigc::signal<void>& signal_changed() { return signal_changed_; }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarearenderer/workarearenderer.cpp:74:	signal_changed()();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarearenderer/workarearenderer.cpp:83:	signal_changed()();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/actionmanagers/keyframeactionmanager.cpp:94:		selection_changed_connection = keyframe_tree_->get_selection()->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/actionmanagers/layeractionmanager.cpp:280:		selection_changed_connection=layer_tree_->get_selection()->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/actionmanagers/layeractionmanager.cpp:396:						(*iter)->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/actionmanagers/layeractionmanager.cpp:406:							(*iter)->get_canvas()->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/actionmanagers/groupactionmanager.cpp:96:		selection_changed_connection=group_tree_->get_selection()->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:313:	signal_changed()();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:339:	signal_changed()();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:349:	signal_changed()();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:359:	signal_changed()();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:369:	signal_changed()();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:379:	signal_changed()();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:389:	signal_changed()();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:399:	signal_changed()();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:409:	signal_changed()();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:419:	signal_changed()();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:429:	signal_changed()();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:439:	signal_changed()();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:449:	signal_changed()();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:459:	signal_changed()();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:469:	signal_changed()();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:482:	signal_changed()();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/modules/mod_palette/dock_paledit.h:73:	sigc::signal<void> signal_changed_;
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/modules/mod_palette/dock_paledit.h:99:	const sigc::signal<void>& signal_changed() { return signal_changed_; }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/modules/mod_palette/dock_paledit.cpp:380:	signal_changed()();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/modules/mod_palette/dock_paledit.cpp:423:		signal_changed()();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/modules/mod_palette/dock_paledit.cpp:444:	signal_changed()();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/modules/mod_palette/dock_paledit.cpp:458:	signal_changed()();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/duckmatic.cpp:1629:			duck_changed_connections.push_back(layer->signal_changed().connect(QUEUE_REBUILD_DUCKS));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/duckmatic.cpp:1652:						duck_changed_connections.push_back(value_desc.get_value_node()->signal_changed().connect(QUEUE_REBUILD_DUCKS));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/trees/childrentree.cpp:162:	get_selection()->signal_changed().connect(sigc::mem_fun(*this, &studio::ChildrenTree::on_selection_changed));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/trees/layergrouptree.cpp:120:	tree_selection->signal_changed().connect(sigc::mem_fun(*this, &LayerGroupTree::on_selection_changed));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/trees/layerparamtreestore.cpp:96:	layer_tree->get_selection()->signal_changed().connect(sigc::mem_fun(*this,&LayerParamTreeStore::queue_rebuild));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/trees/layerparamtreestore.cpp:98:	signal_changed().connect(sigc::mem_fun(*this,&LayerParamTreeStore::queue_refresh));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/trees/layerparamtreestore.cpp:376:				(*iter)->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/trees/layerparamtreestore.cpp:406:				value_desc.get_value_node()->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/trees/layerparamtreestore.cpp:418:				canvas_handle->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/trees/layerparamtreestore.cpp:603:	// already calls Node::signal_changed() so the row is refreshed
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/trees/keyframetree.cpp:147:	get_selection()->signal_changed().connect(sigc::mem_fun(*this, &studio::KeyframeTree::on_selection_changed));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/trees/layerparamtreestore.h:100:	sigc::signal<void> signal_changed_;
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/trees/layerparamtreestore.h:165:	sigc::signal<void>& signal_changed() { return signal_changed_; }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/trees/layerparamtreestore.h:167:	void changed() { signal_changed_(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/trees/layertree.cpp:133:	get_selection()->signal_changed().connect(sigc::mem_fun(*this, &studio::LayerTree::on_selection_changed));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/statemanager.cpp:103:	action->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/app.cpp:2944:		// dialog->property_filter().signal_changed().connect(sigc::mem_fun(*this, &App::on_save_dialog_filter_changed));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/app.cpp:4077:	toggle_resize->property_active().signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/preview.h:189:	sigc::signal0<void>	&signal_changed() { return sig_changed; }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/mainwindow.cpp:603:	name_entry->signal_changed().connect(sigc::track_obj([&](){
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_params.cpp:108:		refresh_selected_param_connection = tree_view->get_selection()->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_params.cpp:113:		// Connect to the canvas's signal_changed() to detect state changes
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_params.cpp:114:		canvas_changed_connection = canvas_view->get_canvas()->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_soundwave.cpp:120:		file_combo.signal_changed().connect(sigc::mem_fun(*this, &Grid_SoundWave::on_file_combo_changed));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_soundwave.cpp:126:		channel_combo.signal_changed().connect(sigc::mem_fun(*this, &Grid_SoundWave::on_channel_combo_changed));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_timetrack.cpp:313:		selection_connection = tree_view->get_selection()->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_timetrack.cpp:397:	canvas_view->time_model()->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_curves.cpp:119:	param_tree_view->get_selection()->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dockbook.h:54:	sigc::signal<void> signal_changed_;
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dockbook.h:65:	sigc::signal<void>& signal_changed() { return signal_changed_; }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dockbook.cpp:167:	signal_changed_();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dockbook.cpp:198:		signal_changed_();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.h:58:	sigc::signal<void> signal_changed_;
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.h:126:	sigc::signal<void> &signal_changed() { return signal_changed_; }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/timemodel.h:78:	sigc::signal<void> signal_changed_;
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/timemodel.h:185:	sigc::signal<void> signal_changed()             { return signal_changed_; }             // raises on any change
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/timemodel.h:193:		signal_changed()();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/timemodel.h:199:		signal_changed()();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/timemodel.h:206:		signal_changed()();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/timemodel.h:212:		signal_changed()();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/timemodel.h:218:		signal_changed()();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:608:	waypoint_dialog.signal_changed().connect(sigc::mem_fun(*this,&CanvasView::on_waypoint_changed));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:835:	widget_interpolation->signal_changed().connect(sigc::mem_fun(*this, &CanvasView::on_interpolation_changed));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:1107:		render_combobox->signal_changed().connect(sigc::mem_fun(*this, &CanvasView::toggle_render_combobox));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:3447:			layer_tree->get_selection()->signal_changed().connect(SLOT_EVENT(EVENT_LAYER_SELECTION_CHANGED));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:3448:			layer_tree->get_selection()->signal_changed().connect(SLOT_EVENT(EVENT_REFRESH_DUCKS));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:3459:			children_tree->get_selection()->signal_changed().connect(SLOT_EVENT(EVENT_REFRESH_DUCKS));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/render.cpp:99:	widget_rend_desc.signal_changed().connect(sigc::mem_fun(*this,&studio::RenderSettings::on_rend_desc_changed));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/render.cpp:110:	comboboxtext_target.signal_changed().connect(sigc::mem_fun(this, &RenderSettings::on_comboboxtext_target_changed));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/timeplotdata.cpp:67:		vertical_changed = vertical_adjustment->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/timeplotdata.cpp:98:		time_model_changed = this->time_model->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/preview.cpp:312:	signal_changed()();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/preview.cpp:470:	zoom_preview.signal_changed().connect(sigc::mem_fun(*this, &Widget_Preview::preview_draw));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/preview.cpp:876:		prevchanged = prev->signal_changed().connect(sigc::mem_fun(*this,&Widget_Preview::whenupdated));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/vectorizersettings.cpp:57:	// comboboxtext_mode.signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_spritesheetparam.cpp:66:	direction_box->signal_changed().connect(sigc::mem_fun(*this, &Dialog_SpriteSheetParam::on_dir_change));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_template.cpp:121:		categories_treeview.get_selection()->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_input.cpp:189:			comboboxtext->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_ffmpegparam.cpp:104:	vcodec->signal_changed().connect(sigc::mem_fun(*this, &Dialog_FFmpegParam::on_vcodec_change));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_workspaces.cpp:82:		current_selection->signal_changed().connect(sigc::mem_fun(*this, &Dialog_Workspaces::on_selection_changed));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_workspaces.cpp:158:	name_entry->signal_changed().connect(sigc::track_obj([&](){
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_guide.cpp:90:	angle_type_picker.signal_changed().connect(sigc::mem_fun(*this, &Dialog_Guide::set_angle_type));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_waypoint.h:56:	sigc::signal<void> signal_changed_;
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_waypoint.h:79:	sigc::signal<void> &signal_changed()
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_waypoint.h:80:	{return signal_changed_; }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_waypoint.cpp:95:    signal_changed_();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_waypoint.cpp:101:    signal_changed_();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_waypoint.cpp:130:		value_desc_changed = value_desc.get_value_node()->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_waypoint.cpp:133:		value_desc_changed = value_desc.get_parent_value_node()->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_waypoint.cpp:136:		value_desc_changed = value_desc.get_layer()->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/canvasproperties.cpp:70:	widget_rend_desc.signal_changed().connect(sigc::mem_fun(*this,&studio::CanvasProperties::on_rend_desc_changed));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/canvasresize.cpp:155:	width->signal_changed().connect(sigc::bind<Gtk::SpinButton*>(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/canvasresize.cpp:159:	height->signal_changed().connect(sigc::bind<Gtk::SpinButton*>(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/canvasresize.cpp:163:	combo_box->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:164:	timestamp_comboboxtext.signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:198:	toggle_autobackup.property_active().signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:262:	auto_backup_interval.signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:264:	toggle_autobackup.property_active().signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:305:	fps_template_combo->signal_changed().connect(sigc::mem_fun(*this, &studio::Dialog_Setup::on_fps_template_combo_change));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:352:	size_template_combo->signal_changed().connect(sigc::mem_fun(*this, &studio::Dialog_Setup::on_size_template_combo_change));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:710:	number_of_threads_select->signal_changed().connect(sigc::mem_fun(*this, &Dialog_Setup::on_number_of_thread_changed) );
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:725:	toggle_play_sound_on_render_done.property_active().signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:784:	ui_language_combo.signal_changed().connect(sigc::mem_fun(*this, &studio::Dialog_Setup::on_ui_language_combo_change));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:871:	toggle_handle_tooltip_transformation.property_active().signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:884:	ui_language_combo.signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:886:	toggle_use_dark_theme.property_active().signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:888:	toggle_handle_tooltip_widthpoint.property_active().signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:890:	toggle_handle_tooltip_radius.property_active().signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:892:	toggle_handle_tooltip_transformation.property_active().signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:894:	toggle_handle_tooltip_transfo_name.property_active().signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:896:	toggle_handle_tooltip_transfo_value.property_active().signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/helpers.cpp:82:	item.connection_changed = item.adjustment->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_timegraphbase.cpp:81:		time_model_changed_connection = x->signal_changed().connect(sigc::mem_fun(*this, &Widget_TimeGraphBase::on_time_model_changed));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:96:	before_options->signal_changed().connect(sigc::mem_fun(*this,&Widget_WaypointModel::on_change));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:97:	after_options->signal_changed().connect(sigc::mem_fun(*this,&Widget_WaypointModel::on_change));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_curves.cpp:629:					i->get_value_node()->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_curves.cpp:633:					i->get_parent_value_node()->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_curves.cpp:637:					i->get_layer()->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypoint.cpp:83:	before_options->signal_changed().connect(sigc::mem_fun(*this, &Widget_Waypoint::update_tcb_params_visibility));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypoint.cpp:87:	after_options->signal_changed().connect(sigc::mem_fun(*this, &Widget_Waypoint::update_tcb_params_visibility));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:131:	enum_widget->signal_changed().connect(sigc::mem_fun(*this,&Widget_ValueBase::activate));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:132:	sublayer_widget->signal_changed().connect(sigc::mem_fun(*this,&Widget_ValueBase::activate));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:137:	bone_widget->signal_changed().connect(sigc::mem_fun(*this,&Widget_ValueBase::activate));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:138:	canvas_widget->signal_changed().connect(sigc::mem_fun(*this,&Widget_ValueBase::activate));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_timetrack.h:186:		sigc::signal<void> signal_changed() {return signal_changed_;}
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_timetrack.h:200:		sigc::signal<void> signal_changed_;
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_timetrack.cpp:700:	conn = params_treeview->get_selection()->signal_changed().connect(sigc::mem_fun(*this, &Widget_Timetrack::queue_draw));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_timetrack.cpp:714:	range_adjustment->signal_changed().connect(sigc::mem_fun(*this, &Widget_Timetrack::on_range_adjustment_changed));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_timetrack.cpp:749:		row_info.signal_changed().connect(sigc::mem_fun(*this, &Widget_Timetrack::queue_draw));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_timetrack.cpp:1091:						value_node->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_timetrack.cpp:1095:						value_desc.get_parent_value_node()->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_timetrack.cpp:1128:						value_node->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_timetrack.cpp:1134:						value_desc.get_parent_value_node()->signal_changed().connect(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_timetrack.cpp:1157:	signal_changed().emit();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_vector.cpp:84:	entry_x->signal_changed().connect(sigc::mem_fun(*this,&studio::Widget_Vector::on_entry_x_changed));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_vector.cpp:102:	entry_y->signal_changed().connect(sigc::mem_fun(*this,&studio::Widget_Vector::on_entry_y_changed));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_defaults.cpp:283:	brush_entry->signal_changed().connect(sigc::mem_fun(*this,&studio::Widget_Defaults::on_brush_entry_changed));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_defaults.cpp:322:	//widget_blend_method->signal_changed().connect(sigc::mem_fun(*this,&studio::Widget_Defaults::on_blend_method_changed));
+grep -rn "set_active" \
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/action.h:224:	void set_active(bool x) { active_=x; }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/action_system.cpp:385:		action->set_active(x);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/action_system.cpp:391:			action->set_active(!x);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/action_system.cpp:395:				redo_action_stack_.front()->set_active(false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/action_system.cpp:407:		action->set_active(x);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/valuenodesetactivebone.cpp:53:ACTION_SET_TASK(Action::ValueNodeSetActiveBone,"set_active_bone");
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/keyframeremove.cpp:103:		//keyframe.set_active(get_canvas()->keyframe_list().find(keyframe)->active());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/keyframeremove.cpp:105:			keyframe.set_active(iter->active());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/keyframetoggle.cpp:157:	keyframe.set_active(new_status);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/keyframetoggle.cpp:184:	keyframe.set_active(!new_status);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/layercopy.cpp:170:		new_layer->set_active(layer->active());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/keyframeduplicate.cpp:112:		new_keyframe.set_active(keyframe.active());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rotate.cpp:121:	void set_scale_flag(bool x) { scale_checkbutton.set_active(x); refresh_scale_flag(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:206:	void set_invert(bool i) { invert_checkbutton.set_active(i); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:209:	void set_layer_circle_flag(bool x) { return layer_circle_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:212:	void set_layer_region_flag(bool x) { return layer_region_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:215:	void set_layer_outline_flag(bool x) { return layer_outline_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:218:	void set_layer_advanced_outline_flag(bool x) { return layer_advanced_outline_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:221:	void set_layer_curve_gradient_flag(bool x) { return layer_curve_gradient_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:224:	void set_layer_plant_flag(bool x) { return layer_plant_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:227:	void set_layer_link_origins_flag(bool x) { return layer_link_origins_checkbutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:230:	void set_layer_origins_at_center_flag(bool x) { return layer_origins_at_center_checkbutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bone.cpp:130:	void set_active_bone(ValueNode::Handle value_node);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bone.cpp:419:			get_work_area()->set_active_bone_display(true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bone.cpp:508:	get_work_area()->set_active_bone_display(false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bone.cpp:628:						set_active_bone(new_active_bone);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bone.cpp:774:					set_active_bone(new_active_bone_node);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bone.cpp:799:			get_work_area()->set_active_bone_display(true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bone.cpp:818:		set_active_bone(nullptr);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bone.cpp:917:StateBone_Context::set_active_bone(ValueNode::Handle bone_value_node)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bone.cpp:1054:			set_active_bone(parent);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:250:	void set_pressure_width_flag(bool x) { return pressure_width_checkbutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:253:	void set_auto_loop_flag(bool x) { return auto_loop_checkbutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:256:	void set_auto_extend_flag(bool x) { return auto_extend_checkbutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:259:	void set_auto_link_flag(bool x) { return auto_link_checkbutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:262:	void set_layer_region_flag(bool x) { return layer_region_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:265:	//void set_layer_outline_flag(bool x) { return layer_outline_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:268:	//void set_layer_advanced_outline_flag(bool x) { return layer_advanced_outline_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:271:	void set_auto_export_flag(bool x) { return auto_export_checkbutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:292:	void set_local_threshold_flag(bool x) { localthres_radiobutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:295:	void set_global_threshold_flag(bool x) { globalthres_radiobutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:298:	void set_min_pressure_flag(bool x) { min_pressure_checkbutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:301:	void set_round_ends_flag(bool x) {round_ends_checkbutton.set_active(x);}
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:716:	localthres_radiobutton.set_active(localthres_spin.is_focus());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:717:	globalthres_radiobutton.set_active(globalthres_spin.is_focus());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_text.cpp:134:	void set_layer_text_flag(bool x) { return layer_text_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_text.cpp:143:	void set_paragraph_flag(bool x) { return paragraph_checkbutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:236:	void set_invert(bool i) { invert_checkbutton.set_active(i); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:239:	void set_regular_polygon(bool i) { regular_polygon_checkbutton.set_active(i); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:242:	void set_layer_star_flag(bool x) { return layer_star_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:245:	void set_layer_region_flag(bool x) { return layer_region_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:248:	void set_layer_outline_flag(bool x) { return layer_outline_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:251:	void set_layer_advanced_outline_flag(bool x) { return layer_advanced_outline_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:254:	void set_layer_curve_gradient_flag(bool x) { return layer_curve_gradient_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:257:	void set_layer_plant_flag(bool x) { return layer_plant_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:260:	void set_layer_link_origins_flag(bool x) { return layer_link_origins_checkbutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:263:	void set_layer_origins_at_center_flag(bool x) { return layer_origins_at_center_checkbutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_scale.cpp:110:	void set_aspect_lock_flag(bool x) { aspect_lock_checkbutton.set_active(x); refresh_aspect_lock_flag(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:190:	void set_invert(bool i) { invert_checkbutton.set_active(i); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:193:	void set_layer_rectangle_flag(bool x) { return layer_rectangle_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:196:	void set_layer_region_flag(bool x) { return layer_region_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:199:	void set_layer_outline_flag(bool x) { return layer_outline_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:202:	void set_layer_advanced_outline_flag(bool x) { return layer_advanced_outline_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:205:	void set_layer_curve_gradient_flag(bool x) { return layer_curve_gradient_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:208:	void set_layer_plant_flag(bool x) { return layer_plant_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:211:	void set_layer_link_origins_flag(bool x) { return layer_link_origins_checkbutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_gradient.cpp:143:		return layer_linear_gradient_togglebutton.set_active(x);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_gradient.cpp:152:		return layer_radial_gradient_togglebutton.set_active(x);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_gradient.cpp:161:		return layer_conical_gradient_togglebutton.set_active(x);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_gradient.cpp:170:		return layer_spiral_gradient_togglebutton.set_active(x);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_mirror.cpp:110:			radiobutton_axis_x.set_active(true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_mirror.cpp:112:			radiobutton_axis_y.set_active(true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:180:	void set_invert(bool i) { invert_checkbutton.set_active(i); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:183:	void set_layer_polygon_flag(bool x) { return layer_polygon_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:186:	void set_layer_region_flag(bool x) { return layer_region_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:189:	void set_layer_outline_flag(bool x) { return layer_outline_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:192:	void set_layer_advanced_outline_flag(bool x) { return layer_advanced_outline_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:195:	void set_layer_curve_gradient_flag(bool x) { return layer_curve_gradient_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:198:	void set_layer_plant_flag(bool x) { return layer_plant_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:201:	void set_layer_link_origins_flag(bool x) { return layer_link_origins_checkbutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:213:	void set_layer_region_flag(bool x) { return layer_region_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:216:	void set_layer_outline_flag(bool x) { return layer_outline_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:219:	void set_layer_advanced_outline_flag(bool x) { return layer_advanced_outline_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:222:	void set_layer_curve_gradient_flag(bool x) { return layer_curve_gradient_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:225:	void set_layer_plant_flag(bool x) { return layer_plant_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:228:	void set_layer_link_origins_flag(bool x) { return layer_link_origins_checkbutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:231:	void set_auto_export_flag(bool x) { return auto_export_checkbutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:242:	void set_pressure_width_flag(bool x) { return pressure_width_checkbutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:245:	void set_auto_loop_flag(bool x) { return auto_loop_checkbutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:248:	void set_auto_extend_flag(bool x) { return auto_extend_checkbutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:251:	void set_auto_link_flag(bool x) { return auto_link_checkbutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:254:	void set_layer_region_flag(bool x) { return layer_region_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:257:	void set_layer_outline_flag(bool x) { return layer_outline_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:260:	void set_layer_advanced_outline_flag(bool x) { return layer_advanced_outline_togglebutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:263:	void set_layer_link_origins_flag(bool x) { return layer_link_origins_checkbutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:266:	void set_auto_export_flag(bool x) { return auto_export_checkbutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:287:	void set_local_threshold_flag(bool x) { localthres_radiobutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:290:	void set_global_threshold_flag(bool x) { globalthres_radiobutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:293:	void set_min_pressure_flag(bool x) { min_pressure_checkbutton.set_active(x); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:296:	void set_round_ends_flag(bool x) {round_ends_checkbutton.set_active(x);}
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:789:	localthres_radiobutton.set_active(localthres_spin.is_focus());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:790:	globalthres_radiobutton.set_active(globalthres_spin.is_focus());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_sketch.cpp:257:	show_sketch_checkbutton.set_active(get_work_area()->get_show_persistent_strokes());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_width.cpp:124:	void set_relative(bool r) { relative_checkbutton.set_active(r); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_brush.cpp:463:				brush_buttons[value]->set_active(true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_brush.cpp:465:		eraser_checkbox.set_active(settings.get_value("brush.eraser", false));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_brush.cpp:649:		first_button->set_active(true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_brush.cpp:660:			selected_brush_button->set_active(false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_brush.cpp:662:		eraser_checkbox.set_active(selected_brush_config.settings[BRUSH_ERASER].base > 0.0);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dials/framedial.cpp:149:	{ repeat->set_active(enable); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dials/framedial.cpp:153:	{ bounds_enable->set_active(enable); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dials/jackdial.cpp:62:	button->set_active();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dials/jackdial.cpp:77:	toggle_jack_button->set_active(enabled);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dials/toggleducksdial.cpp:100:	ducks_position. set_active((mask & Duck::TYPE_POSITION));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dials/toggleducksdial.cpp:101:	ducks_vertex  . set_active((mask & Duck::TYPE_VERTEX));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dials/toggleducksdial.cpp:102:	ducks_tangent . set_active((mask & Duck::TYPE_TANGENT));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dials/toggleducksdial.cpp:103:	ducks_radius  . set_active((mask & Duck::TYPE_RADIUS));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dials/toggleducksdial.cpp:104:	ducks_width   . set_active((mask & Duck::TYPE_WIDTH));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dials/toggleducksdial.cpp:105:	ducks_angle   . set_active((mask & Duck::TYPE_ANGLE));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dials/keyframedial.cpp:62:	button->set_active();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dials/keyframedial.cpp:74:		toggle_keyframe_future->set_active(true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dials/keyframedial.cpp:80:		toggle_keyframe_future->set_active(false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dials/keyframedial.cpp:87:		toggle_keyframe_past->set_active(true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dials/keyframedial.cpp:93:		toggle_keyframe_past->set_active(false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dials/resolutiondial.cpp:105:	use_low_resolution.set_active(flag);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:255:	toggle_wh_ratio->set_active((bool)(rend_desc_.get_flags()&RendDesc::LINK_IM_ASPECT));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:256:	toggle_res_ratio->set_active((bool)(rend_desc_.get_flags()&RendDesc::LINK_RES));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:284:	toggle_px_aspect->set_active((bool)(rend_desc_.get_flags()&RendDesc::PX_ASPECT));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:285:	toggle_px_width->set_active((bool)(rend_desc_.get_flags()&RendDesc::PX_W));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:286:	toggle_px_height->set_active((bool)(rend_desc_.get_flags()&RendDesc::PX_H));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:288:	toggle_im_aspect->set_active((bool)(rend_desc_.get_flags()&RendDesc::IM_ASPECT));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:289:	toggle_im_width->set_active((bool)(rend_desc_.get_flags()&RendDesc::IM_W));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:290:	toggle_im_height->set_active((bool)(rend_desc_.get_flags()&RendDesc::IM_H));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:291:	toggle_im_span->set_active((bool)(rend_desc_.get_flags()&RendDesc::IM_SPAN));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarea.cpp:187:	canvas_interface->signal_active_bone_changed().connect(sigc::mem_fun(*this,&studio::WorkArea::set_active_bone_value_node));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarea.cpp:2237:WorkArea::set_active_bone_value_node(synfig::ValueNode::LooseHandle x)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.h:227:	void set_grid_snap_toggle(bool flag) { grid_snap_toggle->set_active(flag); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.h:228:	void set_grid_show_toggle(bool flag) { grid_show_toggle->set_active(flag); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.h:229:	void set_guides_snap_toggle(bool flag) { guides_snap_toggle->set_active(flag); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.h:230:	void set_guides_show_toggle(bool flag) { guides_show_toggle->set_active(flag); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.h:231:	void set_onion_skin_toggle(bool flag) { onion_skin_toggle->set_active(flag); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.h:232:	void set_onion_skin_keyframes_toggle(bool flag) { onion_skin_keyframes_toggle->set_active(flag); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.h:233:	void set_background_rendering_toggle(bool flag) { background_rendering_toggle->set_active(flag); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/app.cpp:2653:				combo_importers.set_active_id(importer.id);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/app.cpp:4075:	toggle_resize->set_active(App::resize_imported_images);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/preview.h:276:	void set_loop_flag(bool b) {return b_loop->set_active(b);}
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/mainwindow.cpp:195:	toggle_menubar->set_active(App::enable_mainwin_menubar);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/mainwindow.cpp:199:	toggle_toolbar->set_active(App::enable_mainwin_toolbar);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_toolbox.h:75:	void set_active_state(const synfig::String& statename);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_soundwave.cpp:100:			file_combo.set_active_id(item_no_audio_id);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_soundwave.cpp:104:			file_combo.set_active_id(item_audio_file_id);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_soundwave.cpp:108:			file_combo.set_active_id(item_no_audio_id);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_soundwave.cpp:121:		file_combo.set_active_id(item_no_audio_id);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_soundwave.cpp:178:		channel_combo.set_active_id(std::to_string(widget_sound.get_channel_idx()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_soundwave.cpp:225:		file_combo.set_active_text(item_no_audio_str);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_soundwave.cpp:243:				file_combo.set_active_id(item_no_audio_id);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_soundwave.cpp:362:				file_combo.set_active_id(item_no_audio_id);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_soundwave.cpp:377:			file_combo.set_active_id(guid);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_soundwave.cpp:402:				file_combo.set_active_id(item_no_audio_id);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_toolbox.cpp:146:Dock_Toolbox::set_active_state(const synfig::String& statename)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_toolbox.cpp:243:	// avoid unnecessary events for radio_button->set_active(true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_toolbox.cpp:249:		set_active_state(canvasview_state_name);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_toolbox.cpp:253:				radio_button->set_active(true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_toolbox.cpp:256:		set_active_state("none");
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_timetrack2.cpp:284:		button->set_active(true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:1109:		render_combobox->set_active(1);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:1120:		background_rendering_button->set_active(work_area->get_background_rendering());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:1149:		onion_skin->set_active(work_area->get_onion_skin());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:1194:		onion_skin_keyframes->set_active(work_area->get_onion_skin_keyframes());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:1238:		show_grid->set_active(work_area->grid_status());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:1251:		snap_grid->set_active(work_area->grid_status());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:1264:		show_guides->set_active(work_area->get_show_guides());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:1277:		snap_guides->set_active(work_area->get_guide_snap());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:1454:			action->set_active();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:1489:		action->set_active(current_value);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:1513:		action->set_active(false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:1538:			action->set_active(duck_active);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:1684:lock_item->set_active(is_locked);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:2138:		animatebutton->set_active(true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:2144:		animatebutton->set_active(false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:2291:	action->set_active(work_area->get_low_resolution_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:2311:		action->set_active(true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:2330:	action->set_active(work_area->get_low_resolution_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:2347:	action->set_active(work_area->get_low_resolution_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:2379:	show_grid->set_active(work_area->grid_status());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:2393:	snap_grid->set_active(work_area->get_grid_snap());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:2405:	show_guides->set_active(work_area->get_show_guides());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:2417:	snap_guides->set_active(work_area->get_guide_snap());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:2431:	onion_skin->set_active(work_area->get_onion_skin());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:2443:	onion_skin_keyframes->set_active(work_area->get_onion_skin_keyframes());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:2457:	background_rendering_button->set_active(work_area->get_background_rendering());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:3098:		action->set_active((bool)(work_area->get_type_mask()&Duck::TYPE_POSITION));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:3100:		action->set_active((bool)(work_area->get_type_mask()&Duck::TYPE_TANGENT));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:3102:		action->set_active((bool)(work_area->get_type_mask()&Duck::TYPE_VERTEX));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:3104:		action->set_active((bool)(work_area->get_type_mask()&Duck::TYPE_RADIUS));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:3106:		action->set_active((bool)(work_area->get_type_mask()&Duck::TYPE_WIDTH));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:3108:		action->set_active((bool)(work_area->get_type_mask()&Duck::TYPE_ANGLE));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:3145:		action_mask_bone_setup_ducks->set_active(true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:3146:		action_mask_bone_recursive_ducks->set_active(false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:3149:		action_mask_bone_recursive_ducks->set_active(true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:3168:		action->set_active((bool)(work_area->get_background_rendering()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:3170:		action->set_active((bool)(work_area->get_onion_skin()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:3172:		action->set_active((bool)(work_area->get_onion_skin_keyframes()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:3174:		action->set_active((bool)(work_area->grid_status()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:3176:		action->set_active((bool)(work_area->get_grid_snap()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:3178:		action->set_active((bool)(work_area->get_show_guides()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:3180:		action->set_active((bool)(work_area->get_guide_snap()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:3182:		background_rendering_button->set_active(work_area->get_background_rendering());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:3183:		onion_skin->set_active(work_area->get_onion_skin());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:3184:		onion_skin_keyframes->set_active(work_area->get_onion_skin_keyframes());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:3185:		snap_grid->set_active(work_area->get_grid_snap());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:3186:		show_grid->set_active(work_area->grid_status());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:3187:		snap_guides->set_active(work_area->get_guide_snap());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:3188:		show_guides->set_active(work_area->get_show_guides());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/render.cpp:109:	comboboxtext_target.set_active(0);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/render.cpp:193:	toggle_single_frame.set_active(false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/render.cpp:198:	toggle_extract_alpha.set_active(false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/preview.cpp:335:	button->set_active();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarea.h:293:	void set_active_bone_value_node(synfig::ValueNode::LooseHandle x);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarea.h:344:	void set_active_bone_display(bool x){highlight_active_bone=x;}
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_keyframe.cpp:125:	entry_toogle.set_active(keyframe_.active());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_keyframe.cpp:186:		keyframe_.set_active(entry_toogle.get_active());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_spritesheetparam.cpp:65:	direction_box->set_active(0);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_spritesheetparam.cpp:117:	direction_box->set_active(get_tparam().dir);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_spritesheetparam.cpp:118:	check_button->set_active(get_tparam().append);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_input.cpp:185:			case Gdk::MODE_SCREEN: comboboxtext->set_active(1); break;
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_input.cpp:186:			case Gdk::MODE_WINDOW: comboboxtext->set_active(2); break;
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_input.cpp:187:			default:               comboboxtext->set_active(0); break;
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/canvasoptions.cpp:132:		toggle_grid_show->set_active(true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/canvasoptions.cpp:134:		toggle_grid_show->set_active(false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/canvasoptions.cpp:137:		toggle_grid_snap->set_active(true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/canvasoptions.cpp:139:		toggle_grid_snap->set_active(false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_preview.h:143:	void set_begin_override(bool o) { check_overbegin->set_active(o); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_preview.h:146:	void set_end_override(bool o) { check_overend->set_active(o); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_ffmpegparam.cpp:125:	vcodec->set_active_id(CUSTOM_VCODEC);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_ffmpegparam.cpp:131:			vcodec->set_active_id(item.first);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_guide.cpp:89:	angle_type_picker.set_active(0);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_pasteoptions.cpp:263:		copy_all_checkbutton->set_active(is_copy_all);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_pasteoptions.cpp:313:		copy_all_checkbutton->set_active(is_something_being_copied);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/canvasresize.cpp:217:		rsz_im_chbox->set_active(was_image_checked);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/canvasresize.cpp:279:	toggle_ratio_wh->set_active(false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/canvasresize.cpp:284:	toggle_ratio_wh->set_active(true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/canvasresize.cpp:329:		rsz_im_chbox->set_active(!is_image_checked);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/canvasresize.cpp:431:	toggle_ratio_wh->set_active(rend_desc.get_flags() & RendDesc::LINK_IM_ASPECT);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:424:		def_background_none.set_active();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:426:		def_background_color.set_active();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:428:		def_background_image.set_active();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:783:	ui_language_combo.set_active_id(App::ui_language);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:837:	icon_theme_combo.set_active_id(App::get_icon_theme_name());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:912:		timestamp_comboboxtext.set_active(5);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:913:		toggle_autobackup.set_active(true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:916:		toggle_restrict_radius_ducks.set_active(true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:917:		toggle_animation_thumbnail_preview.set_active(true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:918:		toggle_enable_experimental_features.set_active(false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:919:		toggle_clear_redo_stack_on_new_action.set_active(true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:920:		toggle_use_dark_theme.set_active(false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:921:		toggle_show_file_toolbar.set_active(true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:927:		size_template_combo->set_active_text(DEFAULT_PREDEFINED_SIZE);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:928:		fps_template_combo->set_active_text(DEFAULT_PREDEFINED_FPS);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:933:		workarea_renderer_combo.set_active_id("");
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:934:		def_background_none.set_active();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:943:		toggle_play_sound_on_render_done.set_active(true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:944:		ui_language_combo.set_active_id(App::ui_language);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:945:		toggle_handle_tooltip_widthpoint.set_active(true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:946:		toggle_handle_tooltip_radius.set_active(true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:947:		toggle_handle_tooltip_transformation.set_active(false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:948:		toggle_handle_tooltip_transfo_name.set_active(false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:949:		toggle_handle_tooltip_transfo_value.set_active(false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1271:	ui_language_combo.set_active_id(App::ui_language);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1278:	toggle_autobackup.set_active(App::auto_recover->get_enabled());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1284:	toggle_restrict_radius_ducks.set_active(App::restrict_radius_ducks);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1287:	toggle_animation_thumbnail_preview.set_active(App::animation_thumbnail_preview);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1290:	toggle_enable_experimental_features.set_active(App::enable_experimental_features);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1295:		toggle_clear_redo_stack_on_new_action.set_active(active);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1299:	toggle_use_dark_theme.set_active(App::use_dark_theme);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1301:	icon_theme_combo.set_active_id(App::get_icon_theme_name());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1304:	toggle_play_sound_on_render_done.set_active(App::use_render_done_sound);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1308:		def_background_none.set_active();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1310:		def_background_color.set_active();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1312:		def_background_image.set_active();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1331:	toggle_show_file_toolbar.set_active(App::show_file_toolbar);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1379:	size_template_combo->set_active_text(App::predefined_size);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1385:	fps_template_combo->set_active_text(App::predefined_fps);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1394:	workarea_renderer_combo.set_active_id(App::workarea_renderer);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1397:	toggle_handle_tooltip_widthpoint.set_active(App::ui_handle_tooltip_flag&Duck::STRUCT_WIDTHPOINT);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1398:	toggle_handle_tooltip_radius.set_active(App::ui_handle_tooltip_flag&Duck::STRUCT_RADIUS);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1404:		toggle_handle_tooltip_transformation.set_active(true);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1405:		toggle_handle_tooltip_transfo_name.set_active(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1407:		toggle_handle_tooltip_transfo_value.set_active(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1412:		toggle_handle_tooltip_transformation.set_active(false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1413:		toggle_handle_tooltip_transfo_name.set_active(false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1415:		toggle_handle_tooltip_transfo_value.set_active(false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1451:		timestamp_comboboxtext.set_active(1);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1453:		timestamp_comboboxtext.set_active(2);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1455:		timestamp_comboboxtext.set_active(3);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1457:		timestamp_comboboxtext.set_active(4);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1459:		timestamp_comboboxtext.set_active(5);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1461:		timestamp_comboboxtext.set_active(0);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1463:		timestamp_comboboxtext.set_active(1);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_bonechooser.cpp:137:    set_active(-1);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_bonechooser.cpp:150:        set_active(0);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_sublayer.cpp:85:	set_active_id(value);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:69:	before_options->set_active(0);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:73:	after_options->set_active(0);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:177:    checkbutton_before.set_active(x.get_before_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:178:    checkbutton_after.set_active(x.get_after_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:179:    checkbutton_tension.set_active(x.get_tension_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:180:    checkbutton_continuity.set_active(x.get_continuity_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:181:    checkbutton_bias.set_active(x.get_bias_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:182:    checkbutton_temporal_tension.set_active(x.get_temporal_tension_flag());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:195:    before_options->set_active(0);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:197:    after_options->set_active(0);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:204:    checkbutton_before.set_active(false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:205:    checkbutton_after.set_active(false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:206:    checkbutton_tension.set_active(false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:207:    checkbutton_continuity.set_active(false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:208:    checkbutton_bias.set_active(false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:209:    checkbutton_temporal_tension.set_active(false);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_fontfamily.cpp:175:	set_active_text(data);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_canvaschooser.cpp:97:	set_active(-1);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_canvaschooser.cpp:120:		set_active(0);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:334:			bool_widget->set_active(value.get(bool()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_enum.cpp:117:			set_active(iter);
+grep -rn "get_value()" \
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/
+dash: 33: /home/yukta/devel/gs/synfig.git/synfig-studio/src/: Permission denied
+
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/canvasinterface.cpp:553:			param_list.add("value",Canvas::LooseHandle(value_desc.get_value().get(Canvas::LooseHandle())));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/canvasinterface.cpp:555:			param_list.add("value",value_desc.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/canvasinterface.cpp:1123:		action->set_param("addcanvas", value_desc.get_value().get(Canvas::Handle()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/canvasinterface.cpp:1308:		canvas=value_desc.get_value().get(canvas);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/valuedescexport.cpp:113:			if(!value_desc.get_value().get(Canvas::Handle()))
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/valuedescexport.cpp:251:		Canvas::Handle canvas(value_desc.get_value().get(Canvas::Handle()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/valuedescexport.cpp:324:		value_node=ValueNode_Const::create(value_desc.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/valuedescset.cpp:163:		value=param.get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/valuedescset.cpp:820:				value=ValueNode_Const::Handle::cast_dynamic(value_desc.get_value_node())->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/valuedescset.cpp:822:				value=value_desc.get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/valuedescset.cpp:933:						ValueBase waypoint_value(waypoint.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/valuedescconvert.cpp:181:		value=value_desc.get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/valuedescsetinterpolation.cpp:147:		old_value = value_desc.get_value().get_interpolation();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/layerparamset.cpp:106:		new_value=param.get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/waypointsetsmart.cpp:307:						tmp.set_value(waypoint.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/waypointsetsmart.cpp:370:						tmp.set_value(waypoint.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/valuedesccreatechildbone.cpp:164:			origin=param.get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/valuedesccreatechildbone.cpp:167:			scalelx=param.get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/valuedesccreatechildbone.cpp:170:			angle=param.get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/valuedesccreatechildbone.cpp:173:			width = param.get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/valuedesccreatechildbone.cpp:176:			tipwidth = param.get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/valuenodeconstset.cpp:108:		new_value=param.get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/actions/valuenodeconstset.cpp:129:	old_value=value_node->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/action_param.h:161:	const synfig::ValueBase& get_value()const { assert(type_==TYPE_VALUE); return value_; }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/value_desc.h:432:		return get_value().get_type();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/value_desc.h:448:			return get_value().get_interpolation();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/value_desc.h:463:		   return get_value().get_static();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/synfigapp/instance.cpp:391:		ValueBase value = value_node->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:177:	int get_blend()const { return blend_enum.get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:180:	Real get_opacity()const { return opacity_hscl.get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:184:		return bline_width_dist.get_value().get(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:192:		return feather_dist.get_value().get(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:199:	Real get_number_of_bline_points()const { return number_of_bline_points_adj->get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:202:	Real get_bline_point_angle_offset()const { return bline_point_angle_offset_adj->get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:361:		settings.set_value("circle.bline_width", bline_width_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_circle.cpp:362:		settings.set_value("circle.feather", feather_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bone.cpp:140:		return skel_bone_width_dist.get_value().get(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bone.cpp:148:		return skel_deform_bone_width_dist.get_value().get(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bone.cpp:265:		settings.set_value("bone.skel_bone_width",skel_bone_width_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bone.cpp:266:		settings.set_value("bone.skel_deform_bone_width",skel_deform_bone_width_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:238:	Real get_opacity()const { return opacity_hscl.get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:242:		return bline_width_dist.get_value().get(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:273:	Real get_min_pressure() const { return min_pressure_adj->get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:277:		return feather_dist.get_value().get(Distance::SYSTEM_UNITS,
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:282:	Real get_gthres() const { return globalthres_adj->get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:285:	Real get_lthres() const { return localthres_adj->get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:288:	Real get_width_max_error() const { return width_max_error_adj->get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:430:		settings.set_value("lasso.bline_width", bline_width_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_lasso.cpp:440:		settings.set_value("lasso.feather",feather_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_text.cpp:136:	int get_blend()const { return blend_enum.get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_text.cpp:139:	Real get_opacity()const { return opacity_hscl.get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_text.cpp:145:	Vector get_size() { return size_widget.get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_text.cpp:148:	Vector get_orientation() { return orientation_widget.get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_text.cpp:151:	String get_family()const { return fontfamily_widget.get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:192:	int get_blend()const { return blend_enum.get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:195:	Real get_opacity()const { return opacity_hscl.get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:199:		return bline_width_dist.get_value().get(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:207:		return feather_dist.get_value().get(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:214:	Real get_number_of_points()const { return number_of_points_adj->get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:217:	Real get_inner_tangent()const { return inner_tangent_adj->get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:220:	Real get_outer_tangent()const { return outer_tangent_adj->get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:223:	Real get_inner_width()const { return inner_width_adj->get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:226:	Real get_outer_width()const { return outer_width_adj->get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:229:	Real get_radius_ratio()const { return radius_ratio_adj->get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:232:	Real get_angle_offset()const { return angle_offset_adj->get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:406:		settings.set_value("star.bline_width", bline_width_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_star.cpp:407:		settings.set_value("star.feather", feather_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_smoothmove.cpp:114:	float get_radius()const { return adj_radius->get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:159:	int get_blend()const { return blend_enum.get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:162:	Real get_opacity()const { return opacity_hscl.get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:166:		return bline_width_dist.get_value().get(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:174:		return feather_dist.get_value().get(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:182:		return expand_dist.get_value().get(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:337:		settings.set_value("rectangle.bline_width", bline_width_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:338:		settings.set_value("rectangle.expand",expand_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_rectangle.cpp:339:		settings.set_value("rectangle.feather", feather_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_gradient.cpp:124:	int get_blend()const { return blend_enum.get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_gradient.cpp:127:	Real get_opacity()const { return opacity_hscl.get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:157:	int get_blend()const { return blend_enum.get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:160:	Real get_opacity()const { return opacity_hscl.get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:164:		return bline_width_dist.get_value().get(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:172:		return feather_dist.get_value().get(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:322:		settings.set_value("polygon.bline_width", bline_width_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_polygon.cpp:323:		settings.set_value("polygon.feather", feather_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:190:		int get_blend()const { return blend_enum.get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:193:	Real get_opacity()const { return opacity_hscl.get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:197:		return bline_width_dist.get_value().get(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:205:		return feather_dist.get_value().get(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:386:		settings.set_value("bline.bline_width", bline_width_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:387:		settings.set_value("bline.feather", feather_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:739:			BLinePoint bline_point((*iter)->get_value().get(BLinePoint()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:1320:		bline_point=(value_node->get_value().get(BLinePoint()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:1422:		BLinePoint bline_point(bline_point_list.front()->get_value().get(BLinePoint()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:1516:	BLinePoint bline_point(value_node->get_value().get(BLinePoint()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:1525:	BLinePoint bline_point(value_node->get_value().get(BLinePoint()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:1540:	BLinePoint bline_point(value_node->get_value().get(BLinePoint()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:1604:	BLinePoint bline_point(value_node->get_value().get(BLinePoint()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:1735:			BLinePoint next_bline_point((*iter)->get_value().get(BLinePoint()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:1746:			prev_bline_point=(*prev)->get_value().get(BLinePoint());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:1801:	BLinePoint bline_point(value_node->get_value().get(BLinePoint()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_bline.cpp:1872:	BLinePoint bline_point(value_node->get_value().get(BLinePoint()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:227:	int get_blend()const { return blend_enum.get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:230:	Real get_opacity()const { return opacity_hscl.get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:234:		return bline_width_dist.get_value().get(
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:268:	Real get_min_pressure() const { return min_pressure_adj->get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:272:		return feather_dist.get_value().get(Distance::SYSTEM_UNITS,
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:277:	Real get_gthres() const { return globalthres_adj->get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:280:	Real get_lthres() const { return localthres_adj->get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:283:	Real get_width_max_error() const { return width_max_error_adj->get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:427:		settings.set_value("draw.bline_width", bline_width_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_draw.cpp:438:		settings.set_value("draw.feather",feather_dist.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_width.cpp:117:	Real get_delta()const { return adj_delta->get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_width.cpp:120:	Real get_radius()const { return influence_radius->get_value().get(Distance::SYSTEM_UNITS,get_canvas_view()->get_canvas()->rend_desc());}
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/states/state_width.cpp:197:		settings.set_value("width.radius",influence_radius->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/waypointrenderer.cpp:408:	if (!v.get_value().get(Canvas::Handle()))
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/waypointrenderer.cpp:432:	if (!v.get_value().get(Canvas::Handle()))
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/waypointrenderer.cpp:455:		if(Canvas::Handle canvasparam = v.get_value().get(Canvas::Handle()))
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/timemodel.cpp:97:		Time lower((*source)->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/timemodel.cpp:102:		Time t = round_time( Time((*source)->get_value()) );
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/timemodel.cpp:107:		set_time(Time((*source)->get_value()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarearenderer/renderer_ducks.cpp:469:							splited_angle=(const_child->get_value()).get(bool());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarearenderer/renderer_ducks.cpp:490:							splited_radius=(const_child->get_value()).get(bool());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/actionmanagers/layeractionmanager.cpp:100:			ValueNode_Bone::Handle bone_vn = const_vn->get_value().get(ValueNode_Bone::Handle());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dials/framedial.cpp:165:	return end_time->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dials/jackdial.h:63:	synfig::Time get_offset() const                  { return offset_widget->get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:311:	rend_desc_.set_w(round_to_int(adjustment_width->get_value()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:347:	rend_desc_.set_h(round_to_int(adjustment_height->get_value()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:357:	rend_desc_.set_physical_w(INCHES2METERS(adjustment_phy_width->get_value()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:367:	rend_desc_.set_physical_h(INCHES2METERS(adjustment_phy_height->get_value()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:377:	rend_desc_.set_x_res(DPI2DPM(adjustment_xres->get_value()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:387:	rend_desc_.set_y_res(DPI2DPM(adjustment_yres->get_value()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:397:	rend_desc_.set_time_start(entry_start_time->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:407:	rend_desc_.set_time_end(entry_end_time->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:417:	rend_desc_.set_duration(entry_duration->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:427:	rend_desc_.set_frame_rate(adjustment_fps->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:437:	rend_desc_.set_tl(entry_tl->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:447:	rend_desc_.set_br(entry_br->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:457:	rend_desc_.set_focus(entry_focus->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:467:	rend_desc_.set_span(adjustment_span->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:478:		adjustment_gamma_r->get_value(),
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:479:		adjustment_gamma_g->get_value(),
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:480:		adjustment_gamma_b->get_value() ));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:524:	rend_desc_.set_pixel_ratio(adjustment_width->get_value(), adjustment_height->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/renddesc.cpp:546:		rend_desc_.set_res_ratio(adjustment_xres->get_value(), adjustment_yres->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarea.cpp:963:	return synfig::Point(get_scrollx_adjustment()->get_value()*x_factor, get_scrolly_adjustment()->get_value()*y_factor);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarea.cpp:1666:			const synfig::Point scroll_point(get_scrollx_adjustment()->get_value(),get_scrolly_adjustment()->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarea.cpp:1696:				get_scrollx_adjustment()->set_value(get_scrollx_adjustment()->get_value()-scroll_pixel*pw);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarea.cpp:1699:				get_scrollx_adjustment()->set_value(get_scrollx_adjustment()->get_value()+scroll_pixel*pw);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarea.cpp:1702:				get_scrolly_adjustment()->set_value(get_scrolly_adjustment()->get_value()+scroll_pixel*ph);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarea.cpp:1705:				get_scrolly_adjustment()->set_value(get_scrolly_adjustment()->get_value()-scroll_pixel*ph);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarea.cpp:1720:				get_scrolly_adjustment()->set_value(get_scrolly_adjustment()->get_value()+scroll_pixel*ph);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarea.cpp:1723:				get_scrolly_adjustment()->set_value(get_scrolly_adjustment()->get_value()-scroll_pixel*ph);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarea.cpp:1726:				get_scrollx_adjustment()->set_value(get_scrollx_adjustment()->get_value()-scroll_pixel*pw);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/workarea.cpp:1729:				get_scrollx_adjustment()->set_value(get_scrollx_adjustment()->get_value()+scroll_pixel*pw);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/duckmatic.cpp:1824:				//angle=(value_desc.get_value().get(Angle()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/duckmatic.cpp:1915:				//duck->set_point(value_desc.get_value().get(Point()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/duckmatic.cpp:2175:		else if(value_desc.get_value().is_valid())
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/duckmatic.cpp:2177:			Segment segment=value_desc.get_value().get(Segment());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/trees/layerparamtreestore.cpp:416:			Canvas::Handle canvas_handle = value_desc.get_value().get(Canvas::Handle());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/trees/canvastreestore.cpp:128:			x.set(value_desc.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/cellrenderer/cellrenderer_timetrack.h:135:		{ return const_cast<CellRenderer_TimeTrack*>(this)->property_canvas().get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/cellrenderer/cellrenderer_gradient.cpp:78:	render_gradient_to_window(cr,cell_area,property_gradient_.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/cellrenderer/cellrenderer_value.cpp:132:			Type &type(valuewidget->get_value().get_type());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/cellrenderer/cellrenderer_value.cpp:232:	const synfig::ValueBase &get_value()
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/cellrenderer/cellrenderer_value.cpp:235:			return valuewidget->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/cellrenderer/cellrenderer_value.cpp:307:	ValueBase old_value = property_value_.get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/cellrenderer/cellrenderer_value.cpp:345:	ValueBase data = property_value_.get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/cellrenderer/cellrenderer_value.cpp:556:	ValueBase data=(ValueBase)property_value_.get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/cellrenderer/cellrenderer_value.cpp:578:		ValueBase old_value(property_value_.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/cellrenderer/cellrenderer_value.cpp:625:		ValueBase old_value(property_value_.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/cellrenderer/cellrenderer_value.cpp:683:	ValueBase data = property_value_.get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/cellrenderer/cellrenderer_value.cpp:780:		ValueBase value(value_entry->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/cellrenderer/cellrenderer_timetrack.cpp:80:	if (!v.get_value().get(Canvas::Handle()))
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/cellrenderer/cellrenderer_timetrack.cpp:104:	if (!v.get_value().get(Canvas::Handle()))
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/cellrenderer/cellrenderer_timetrack.cpp:126:		if(Canvas::Handle canvasparam = v.get_value().get(Canvas::Handle()))
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/cellrenderer/cellrenderer_timetrack.cpp:267:	Canvas::Handle canvas = property_canvas().get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/cellrenderer/cellrenderer_timetrack.cpp:268:	ValueDesc value_desc = property_value_desc().get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/cellrenderer/cellrenderer_timetrack.cpp:474:	ValueDesc value_desc = property_value_desc().get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/cellrenderer/cellrenderer_timetrack.cpp:573:					param_list.add("addcanvas", sel_value.get_value().get(Canvas::Handle()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/app.cpp:2938:			set_file_version(synfig::ReleaseVersion(file_type_enum->get_value()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/helpers.h:153:			value          = this->adjustment->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/helpers.h:219:		if (!is_equal(value, adjustment->get_value())) {
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_soundwave.cpp:275:			bool ok = canvas_interface->change_value(synfigapp::ValueDesc(synfig::Layer::LooseHandle(sound_layer), std::string("delay")), synfig::ValueBase(delay_widget.get_value()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_soundwave.cpp:277:				widget_sound.set_delay(delay_widget.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_navigator.cpp:234:	double z = pow(2.0, adj_zoom->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/docks/dock_navigator.cpp:252:	if (!scrolling && z != adj_zoom->get_value())
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/pluginmanager.cpp:186:			data[w->get_name()] = std::to_string(static_cast<const Gtk::ScaleButton*>(w)->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/pluginmanager.cpp:188:			data[w->get_name()] = std::to_string(static_cast<const Gtk::VolumeButton*>(w)->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/pluginmanager.cpp:192:			data[w->get_name()] = std::to_string(static_cast<const Gtk::Scale*>(w)->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/pluginmanager.cpp:194:			data[w->get_name()] = std::to_string(static_cast<const Gtk::SpinButton*>(w)->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:1321:	set_time(current_time_widget->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:1756:	int current_time_length = current_time_widget->get_value().get_string(current_frame_rate, App::get_time_format()).length();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:2357:	onion_skins[0]=past_onion_spin->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:2358:	onion_skins[1]=future_onion_spin->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/canvasview.cpp:3660:	{ synfigapp::Main::set_interpolation(Waypoint::Interpolation(widget_interpolation->get_value())); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/render.cpp:533:		rend_desc.set_antialias((int)adjustment_antialias->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/render.cpp:541:		target->set_quality((int)adjustment_quality->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/timeplotdata.cpp:194:	range_lower = vertical_adjustment->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/preview.cpp:536:	double time = adj_time_scrub->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/preview.cpp:752:		double time = adj_time_scrub->get_value() + diff;
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/preview.cpp:787:				//synfig::info("Play Stopped: time set to %f",adj_time_scrub.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/preview.cpp:907:		//synfig::info("Playing at %lf",adj_time_scrub->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/preview.cpp:908:		//audiotime = adj_time_scrub->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/preview.cpp:923:		//signal_play_(adj_time_scrub->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/preview.cpp:946://	float current = adj_time_scrub->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/preview.cpp:974:	double currenttime = adj_time_scrub->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/preview.cpp:1003:	{ return adj_time_scrub->get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/vectorizersettings.cpp:203:	(*config_map)["threshold"] = (int)adjustment_threshold->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/vectorizersettings.cpp:204:	(*config_map)["accuracy"] = (int)adjustment_accuracy->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/vectorizersettings.cpp:205:	(*config_map)["despeckling"] = (int)adjustment_despeckling->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/vectorizersettings.cpp:206:	(*config_map)["maxthickness"] = (int)adjustment_maxthickness->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/vectorizersettings.cpp:224:	action->set_param("threshold",((int)adjustment_threshold->get_value()) * 25);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/vectorizersettings.cpp:225:	action->set_param("penalty",10 - ((int)adjustment_accuracy->get_value()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/vectorizersettings.cpp:226:	action->set_param("despeckling",((int)adjustment_despeckling->get_value()) * 2);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/vectorizersettings.cpp:227:	action->set_param("maxthickness",((int)adjustment_maxthickness->get_value()) / 2);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_spritesheetparam.cpp:138:		columns_box->set_value(ceil((double)frame_count / rows_box->get_value()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_spritesheetparam.cpp:148:		rows_box->set_value(ceil((double)frame_count / columns_box->get_value()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_spritesheetparam.cpp:154:	tparam_.offset_x = offset_x_box->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_spritesheetparam.cpp:155:	tparam_.offset_y = offset_y_box->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_spritesheetparam.cpp:156:	tparam_.rows = rows_box->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_spritesheetparam.cpp:157:	tparam_.columns = columns_box->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/canvasoptions.cpp:174:	canvas_view_->get_work_area()->set_grid_size(vector_grid_size->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_preview.h:127:	float get_zoom() const { return adj_zoom->get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_preview.h:130:	float get_fps() const { return adj_fps->get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_preview.h:136:	synfig::Time get_begintime() const { return time_begin->get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_preview.h:139:	synfig::Time get_endtime() const { return time_end->get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_ffmpegparam.cpp:144:	tparam_.bitrate = bitrate->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_guide.cpp:134:	if (degrees && synfig::Angle::deg(curr_guide->angle).get() != angle_widget->get_value()) {
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_guide.cpp:135:		curr_guide->angle = synfig::Angle::deg(angle_widget->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_guide.cpp:136:	} else if (!degrees && curr_guide->angle.get() != angle_widget->get_value()) {
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_guide.cpp:137:		curr_guide->angle = synfig::Angle::rad(angle_widget->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_gradient.cpp:124:	return widget_gradient->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_gradient.cpp:161:	x.color=widget_color->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_gradient.cpp:162:	x.pos=adjustment_pos->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_gradient.cpp:177:		set_gradient(x.get_value().get(Gradient()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_color.cpp:92:	return color_edit_widget->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_soundselect.h:77:	synfig::Time get_offset() const { return offset.get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_soundselect.h:80:	std::string get_file() const { return soundfile.get_value(); }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_soundselect.cpp:111:	signal_file_changed_(soundfile.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_soundselect.cpp:116:	signal_offset_changed_(offset.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_soundselect.cpp:124:	signal_file_changed_(soundfile.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_soundselect.cpp:125:	signal_offset_changed_(offset.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:983:	App::set_max_recent_files((int)adj_recent_files->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:994:		App::auto_recover->set_timeout_ms(auto_backup_interval.get_value() * 1000);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:997:	App::distance_system              = Distance::System(widget_enum->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1048:	App::preferred_x_size       = int(adj_pref_x_size->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1051:	App::preferred_y_size       = int(adj_pref_y_size->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1060:	App::preferred_fps          = Real(adj_pref_fps->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1084:	App::number_of_threads = int(adj_number_of_threads->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/dialogs/dialog_setup.cpp:1220:	App::number_of_threads = int(adj_number_of_threads->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/helpers.cpp:108:	double position = items.front().adjustment->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/helpers.cpp:115:			position = i->adjustment->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/helpers.cpp:134:		double value = i->adjustment->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_enum.h:73:	int get_value() const;
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_bonechooser.cpp:157:Widget_BoneChooser::get_value()
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_sublayer.cpp:96:Widget_Sublayer::get_value() const
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_timegraphbase.cpp:104:	double y_value = perc_y * range_adjustment->get_page_size() + range_adjustment->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_timegraphbase.cpp:146:			.set_value(range_adjustment->get_value() - range_adjustment->get_step_increment())
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_timegraphbase.cpp:153:			.set_value(range_adjustment->get_value() + range_adjustment->get_step_increment())
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_timegraphbase.cpp:195:			.set_value(range_adjustment->get_value() - real_dy)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_sublayer.h:57:	std::string get_value() const;
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_bonechooser.h:67:	const synfig::ValueNode_Bone::Handle &get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_fontfamily.h:69:	std::string get_value() const;
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_link.cpp:104:		set_tooltip_text(property_tooltip_active().get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_link.cpp:107:		set_tooltip_text(property_tooltip_inactive().get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_distance.cpp:80:	distance_=get_adjustment()->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_distance.cpp:111:Widget_Distance::get_value() const
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_distance.cpp:113:	distance_=get_adjustment()->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:141:	waypoint_model.set_before((Waypoint::Interpolation)before_options->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:142:	waypoint_model.set_after((Waypoint::Interpolation)after_options->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:144:	waypoint_model.set_tension(adj_tension->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:145:	waypoint_model.set_continuity(adj_continuity->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:146:	waypoint_model.set_bias(adj_bias->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypointmodel.cpp:147:	waypoint_model.set_temporal_tension(adj_temporal_tension->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_canvaschooser.h:62:	const synfig::Canvas::Handle &get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_filename.cpp:98:Widget_Filename::get_value() const
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_fontfamily.cpp:182:Widget_FontFamily::get_value() const
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_coloredit.cpp:429:		setHVSColor(get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_coloredit.cpp:502:			A_adjustment->get_value()/100);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_coloredit.cpp:631:	color.set_r(R_adjustment->get_value()/100);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_coloredit.cpp:632:	color.set_g(G_adjustment->get_value()/100);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_coloredit.cpp:633:	color.set_b(B_adjustment->get_value()/100);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_coloredit.cpp:634:	color.set_a(A_adjustment->get_value()/100);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_coloredit.cpp:641:Widget_ColorEdit::get_value()
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_coloredit.cpp:643:	color.set_r(R_adjustment->get_value()/100);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_coloredit.cpp:644:	color.set_g(G_adjustment->get_value()/100);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_coloredit.cpp:645:	color.set_b(B_adjustment->get_value()/100);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_coloredit.cpp:646:	color.set_a(A_adjustment->get_value()/100);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_vector.h:93:	const synfig::Vector &get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_curves.cpp:740:		CurveStruct::get_value_base_channel_values(waypoint.get_value(), channel_values);
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_canvaschooser.cpp:124:Widget_CanvasChooser::get_value()
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_distance.h:61:	synfig::Distance get_value()const;
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.h:107:	const synfig::ValueBase &get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypoint.cpp:207:		value_widget->set_value(waypoint.get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypoint.cpp:241:	waypoint.set_time(time_widget->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypoint.cpp:243:		waypoint.set_value(value_widget->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypoint.cpp:245:	waypoint.set_before((Waypoint::Interpolation)before_options->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypoint.cpp:246:	waypoint.set_after((Waypoint::Interpolation)after_options->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypoint.cpp:248:	waypoint.set_tension(adj_tension->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypoint.cpp:249:	waypoint.set_continuity(adj_continuity->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypoint.cpp:250:	waypoint.set_bias(adj_bias->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypoint.cpp:251:	waypoint.set_temporal_tension(adj_temporal_tension->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypoint.cpp:272:		(Waypoint::Interpolation)before_options->get_value() == Interpolation::INTERPOLATION_TCB ||
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_waypoint.cpp:273:		(Waypoint::Interpolation)after_options->get_value() == Interpolation::INTERPOLATION_TCB)
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:212:	Type &type(get_value().get_type());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:384:Widget_ValueBase::get_value()
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:388:		value=vector_widget->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:393:			value=distance_widget->get_value().units(canvas->rend_desc());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:395:			value=real_widget->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:399:		value=time_widget->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:402:		value=Angle::deg(angle_widget->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:405:		value=bone_widget->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:408:		value=canvas_widget->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:418:			value=enum_widget->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:429:			value=std::string(filename_widget->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:432:			value=std::string(sublayer_widget->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:435:			value=std::string(fontfamily_widget->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_value.cpp:445:		value=color_widget->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_color.cpp:145:Widget_Color::get_value() const
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_filename.h:66:	std::string get_value() const;
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_gradient.h:80:	const synfig::Gradient& get_value()const { return gradient_; }
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_coloredit.h:190:	const synfig::Color &get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_timetrack.cpp:154:			param_list.add("addcanvas", value_desc.get_value().get(synfig::Canvas::Handle()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_timetrack.cpp:185:			param_list.add("addcanvas", value_desc.get_value().get(synfig::Canvas::Handle()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_timetrack.cpp:256:			param_list.add("addcanvas", value_desc.get_value().get(synfig::Canvas::Handle()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_timetrack.cpp:288:			param_list.add("addcanvas", value_desc.get_value().get(synfig::Canvas::Handle()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_time.cpp:104:Widget_Time::get_value() const
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_vector.cpp:195:		entry_x->set_text(distance_x->get_value().get_string(4));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_vector.cpp:196:		entry_y->set_text(distance_y->get_value().get_string(4));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_vector.cpp:205:		String str = std::to_string(spinbutton_x->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_vector.cpp:207:		str = std::to_string(spinbutton_y->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_vector.cpp:216:Widget_Vector::get_value()
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_vector.cpp:220:		vector[0]=spinbutton_x->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_vector.cpp:221:		vector[1]=spinbutton_y->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_vector.cpp:227:		vector[0]=distance_x->get_value().units(canvas_->rend_desc());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_vector.cpp:228:		vector[1]=distance_y->get_value().units(canvas_->rend_desc());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_enum.cpp:132:Widget_Enum::get_value() const
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_defaults.cpp:440:	brush_entry->set_text(widget_bline_width->get_value().get_string(widget_bline_width->get_digits()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_defaults.cpp:459:	synfigapp::Main::set_opacity(widget_opacity->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_defaults.cpp:465:	synfigapp::Main::set_blend_method(Color::BlendMethod(widget_blend_method->get_value()));
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_defaults.cpp:472:	synfigapp::Main::set_bline_width(widget_bline_width->get_value());
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_color.h:62:	const synfig::Color& get_value() const;
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/widgets/widget_time.h:72:	synfig::Time get_value()const;
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/instance.cpp:1551:				value=ValueNode_Const::Handle::cast_dynamic(value_desc.get_value_node())->get_value();
+/home/yukta/devel/gs/synfig.git/synfig-studio/src/gui/instance.cpp:1553:				value=value_desc.get_value();
+dash: 37: dash:: not found
+

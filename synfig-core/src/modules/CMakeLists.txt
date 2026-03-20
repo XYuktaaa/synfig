@@ -34,7 +34,7 @@ set(MODS_ENABLED
     mod_jpeg
 #    mod_magickpp # - made optional
     mod_noise
-    mod_openexr
+	mod_openexr
     mod_particle
     mod_png
     mod_ppm
