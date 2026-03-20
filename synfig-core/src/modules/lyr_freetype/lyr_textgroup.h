@@ -1,11 +1,13 @@
 #ifndef __SYNFIG_LYR_TEXTGROUP_H  
 #define __SYNFIG_LYR_TEXTGROUP_H  
 
+#include <synfig/layer.h>
 #include <synfig/layers/layer_shape.h>
 #include <synfig/layers/layer_pastecanvas.h>  
 #include <synfig/rendering/primitive/contour.h>
 #include <synfig/value.h>
 #include <synfig/string.h>
+
 #include <ft2build.h>  
 #include FT_FREETYPE_H  
 #include FT_GLYPH_H  
@@ -13,8 +15,6 @@
 #include <hb.h>  
 #endif  
 
-using namespace synfig;
-using namespace synfig::rendering;
 class Layer_TextGroup : public synfig::Layer_PasteCanvas  
 {  
     SYNFIG_LAYER_MODULE_EXT  
@@ -42,7 +42,7 @@ public:
   
     bool set_param(const synfig::String &param, const synfig::ValueBase &value) override;  
     synfig::ValueBase get_param(const synfig::String &param) const override;  
-    Vocab get_param_vocab() const override;  
+    synfig::Layer::Vocab get_param_vocab() const override;  
     synfig::String get_local_name() const override;  
   
 private:  
