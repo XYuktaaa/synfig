@@ -40,14 +40,16 @@ public:
     Layer_TextGroup();  
     ~Layer_TextGroup();  
   
-    bool set_param(const synfig::String &param, const synfig::ValueBase &value) override;  
+    bool set_param(const synfig::String & param, const synfig::ValueBase &value) override;  
     synfig::ValueBase get_param(const synfig::String &param) const override;  
     synfig::Layer::Vocab get_param_vocab() const override;  
     synfig::String get_local_name() const override;  
   
 private:  
     void sync_glyphs();  // The key method: decomposes text into child layers  
-    // void new_font(const synfig::String &family, int style, int weight);  
+    // void new_font(const synfig::String &family, int style, int weight);
+    protected:
+    virtual void on_canvas_set();     
 
 };  
 
