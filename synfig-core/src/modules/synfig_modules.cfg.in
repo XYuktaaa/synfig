@@ -3,7 +3,6 @@ lyr_freetype
 mod_geometry
 mod_gradient
 mod_particle
-mod_textgroup
 
 mod_example
 mod_gif

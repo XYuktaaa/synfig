@@ -20,11 +20,11 @@
   
 using namespace synfig;
 
-SYNFIG_LAYER_INIT(Layer_TextGroup);  
-SYNFIG_LAYER_SET_NAME(Layer_TextGroup,"text_group");  
-SYNFIG_LAYER_SET_LOCAL_NAME(Layer_TextGroup,N_("Text Group"));  
-SYNFIG_LAYER_SET_CATEGORY(Layer_TextGroup,N_("Other"));  
-SYNFIG_LAYER_SET_VERSION(Layer_TextGroup,"0.1");  
+SYNFIG_LAYER_INIT(Layer_GlyphShape);  
+SYNFIG_LAYER_SET_NAME(Layer_GlyphShape,"glyph_shape");  
+SYNFIG_LAYER_SET_LOCAL_NAME(Layer_GlyphShape,N_("Glyph"));  
+SYNFIG_LAYER_SET_CATEGORY(Layer_GlyphShape,CATEGORY_DO_NOT_USE);  
+SYNFIG_LAYER_SET_VERSION(Layer_GlyphShape,"0.1");    
   
 Layer_GlyphShape::Layer_GlyphShape() {  
     SET_INTERPOLATION_DEFAULTS();  
@@ -33,7 +33,7 @@ Layer_GlyphShape::Layer_GlyphShape() {
   
 Layer_GlyphShape::~Layer_GlyphShape() {}  
   
-String Layer_GlyphShape::get_local_name() const { return _("Glyph"); }  
+String Layer_GlyphShape::get_local_name() const { return _("Text Group"); }  
   
 void Layer_GlyphShape::set_glyph_chunks(  
     const rendering::Contour::ChunkList& chunks)  
@@ -41,6 +41,26 @@ void Layer_GlyphShape::set_glyph_chunks(
     stored_chunks = chunks;  
     force_sync();  
 }  
+
+ValueBase  
+Layer_TextGroup::get_param(const String& param) const  
+{  
+    EXPORT_VALUE(param_text);  
+    EXPORT_NAME();  
+    EXPORT_VERSION();  
+    return Layer_PasteCanvas::get_param(param);  
+}  
+  
+Layer::Vocab  
+Layer_TextGroup::get_param_vocab() const  
+{  
+    Layer::Vocab ret(Layer_PasteCanvas::get_param_vocab());  
+    ret.push_back(ParamDesc("text")  
+        .set_local_name(_("Text"))  
+        .set_description(_("The text to decompose into per-character layers"))  
+    );  
+    return ret;  
+}
   
 void Layer_GlyphShape::sync_vfunc()  
 {  
