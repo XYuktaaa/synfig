@@ -90,6 +90,6 @@ MODULE_INVENTORY_BEGIN(liblyr_freetype)
 		LAYER(Layer_Freetype)
 		LAYER_ALIAS(Layer_Freetype,"Text")
 		LAYER(Layer_TextGroup)
-		LAYER(Layer_GlyphShape)
+		// LAYER(Layer_GlyphShape)
 	END_LAYERS
 MODULE_INVENTORY_END
