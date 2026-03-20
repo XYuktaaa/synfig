@@ -138,7 +138,7 @@ Layer_TextGroup::sync_glyphs()
 
         if (!outline.empty())
         {
-            Layer::Handle child (new Layer::create());
+            Layer::Handle child (new Layer_GlyphShape());
 
             auto* glyph_layer =
                 dynamic_cast<Layer_GlyphShape*>(child.get());
