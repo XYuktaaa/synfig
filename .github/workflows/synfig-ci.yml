@@ -6,7 +6,7 @@ name: Synfig CI
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ master, textgroup-ci-test ]
+    branches: [ master, ci-test ]
   pull_request:
     branches: [ master ]
 
