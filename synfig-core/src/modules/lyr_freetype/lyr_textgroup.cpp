@@ -127,6 +127,7 @@ Layer_TextGroup::Layer_TextGroup()
     , param_invert(ValueBase(false))
     , param_wave_amplitude(ValueBase(Real(0.05)))
     , param_wave_period(ValueBase(Time(1.0)))
+    , param_var_weight(ValueBase(Real(400.0)))
     , param_broadcast(ValueBase(false))
 {  
     SET_INTERPOLATION_DEFAULTS();  
@@ -218,6 +219,10 @@ bool
         update_wave_offsets(get_time_mark(), true); 
         if (get_canvas()) get_canvas()->get_root()->signal_force_refresh()(); 
     });
+    IMPORT_VALUE_PLUS(param_var_weight, {  
+        if (get_canvas()) get_canvas()->get_root()->signal_force_refresh()();  
+        sync_glyphs();  
+    });
     IMPORT_VALUE_PLUS(param_broadcast,{  
 		broadcast_dynamic_param("anim_offset");
     	// immediately snap it back to false so it can't be silently replayed
@@ -257,6 +262,7 @@ Layer_TextGroup::get_param(const String& param) const
 	EXPORT_VALUE(param_stagger_delay);
 	EXPORT_VALUE(param_wave_amplitude);
 	EXPORT_VALUE(param_wave_period);
+	EXPORT_VALUE(param_var_weight);
 	EXPORT_VALUE(param_broadcast);
     EXPORT_NAME();  
     EXPORT_VERSION();  
@@ -393,6 +399,10 @@ Layer_TextGroup::get_param_vocab() const
     	.set_local_name(_("Wave Period"))  
     	.set_description(_("Duration of one full wave cycle"))  
 	);
+	ret.push_back(ParamDesc("var_weight")  
+		.set_local_name(_("Variable Weight"))  
+		.set_description(_("Weight axis (wght) for OpenType variable fonts. Animatable; ignored for non-variable fonts"))  
+	);  
 	ret.push_back(ParamDesc("broadcast")
     	.set_local_name(_("Share Animation"))
    		.set_description(_("Connect all glyphs to the shared animation graph"))
@@ -563,6 +573,32 @@ Layer_TextGroup::broadcast_dynamic_param(const String& param)
     changed();
 }
 
+static void  
+apply_variable_axes(FT_Face face, Real wght_value)  
+{  
+    if (!face || !FT_HAS_MULTIPLE_MASTERS(face))  
+        return;  
+  
+    FT_MM_Var* mm = nullptr;  
+    if (FT_Get_MM_Var(face, &mm) != 0 || !mm)  
+        return;  
+  
+    std::vector<FT_Fixed> coords(mm->num_axis);  
+    for (FT_UInt i = 0; i < mm->num_axis; ++i) {  
+        coords[i] = mm->axis[i].def;                 // keep default for undriven axes  
+        if (mm->axis[i].tag == FT_MAKE_TAG('w','g','h','t')) {  
+            FT_Fixed val = static_cast<FT_Fixed>(wght_value * 65536.0);  
+            if (val < mm->axis[i].minimum) val = mm->axis[i].minimum;  
+            if (val > mm->axis[i].maximum) val = mm->axis[i].maximum;  
+            coords[i] = val;  
+        }  
+    }  
+  
+    FT_Set_Var_Design_Coordinates(face, mm->num_axis, coords.data());  // use BEFORE freeing  
+    FT_Done_MM_Var(ft_library, mm);                                    // vector frees itself  
+}  
+
+
 void Layer_TextGroup::update_wave_offsets(Time time, bool force_sync_after) const  
 {  
     Canvas::Handle canvas = get_sub_canvas();  
@@ -647,8 +683,7 @@ Layer_TextGroup::sync_glyphs()
         changed();  
         return;  
     }  
-  
-      
+	apply_variable_axes(face, param_var_weight.get(Real()));    
       
     const bool    grid_fit    = param_grid_fit.get(bool());  
     const Vector  orient      = param_orient.get(Vector());  
@@ -709,6 +744,17 @@ auto shaped_lines =
 
     		if (FT_Load_Glyph(face,glyph_index,load_flags))
         		continue;
+    // 		FT_Set_Char_Size(
+    // face,
+    // 0,
+    // 64 * 64,    // 64 pt
+    // 72,
+    // 72);
+
+FT_Load_Glyph(face, glyph_index, FT_LOAD_DEFAULT);
+    		synfig::info("advance=%ld", face->glyph->advance.x);
+synfig::info("width=%ld", face->glyph->metrics.width);
+synfig::info("height=%ld", face->glyph->metrics.height);
 
     		FT_Glyph ftglyph;
     		if (FT_Get_Glyph(face->glyph, &ftglyph))

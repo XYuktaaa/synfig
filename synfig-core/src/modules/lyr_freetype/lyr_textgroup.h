@@ -10,7 +10,8 @@
 
 #include <ft2build.h>  
 #include FT_FREETYPE_H  
-#include FT_GLYPH_H  
+#include FT_GLYPH_H
+#include FT_MULTIPLE_MASTERS_H 
 #if HAVE_HARFBUZZ  
 #include <hb.h>  
 #endif  
@@ -36,6 +37,7 @@ private:
     synfig::ValueBase param_invert;
 	synfig::ValueBase param_wave_amplitude;
 	synfig::ValueBase param_wave_period;
+	synfig::ValueBase param_var_weight;
 	synfig::ValueBase param_broadcast;
 
 public:  
