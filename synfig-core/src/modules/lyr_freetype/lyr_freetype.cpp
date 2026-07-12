@@ -1398,5 +1398,5 @@ Layer_Freetype::load_font_uncached(const std::string& family, int style, int wei
 #else
     FaceMetaData::add_to_face(face, path);
 #endif
-    return face; // NOT put into face_cache — caller owns it exclusively
+    return face; 
 }
