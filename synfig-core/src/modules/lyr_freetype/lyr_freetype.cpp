@@ -1110,9 +1110,8 @@ Layer_Freetype::sync_vfunc()
 			FT_OutlineGlyph outline_glyph = nullptr;
 			if (ftglyph->format == FT_GLYPH_FORMAT_OUTLINE) {
 				outline_glyph = FT_OutlineGlyph(ftglyph);
-				text_processing::convert_outline_to_contours(outline_glyph, glyph.outline);
+				text_processing::convert_outline_to_contours(&outline_glyph->outline, glyph.outline);
 			}
-
 			glyph_map[glyph_index] = glyph;
 
 			FT_Done_Glyph(ftglyph);
@@ -1355,3 +1354,49 @@ Layer_Freetype::get_cached_hb_font(FT_Face face)
     return FaceMetaData::get_from_face(face).font;
 }
 #endif
+
+static bool
+resolve_and_open_face(const std::string& family, int style, int weight, FT_Face& out_face,
+                       std::string& out_path)
+{
+    if (has_valid_font_extension(family)) {
+        if (FT_New_Face(ft_library, family.c_str(), 0, &out_face) == 0) {
+            out_path = family;
+            return true;
+        }
+    }
+#ifdef WITH_FONTCONFIG
+    std::string fc_file = fontconfig_get_filename(family, style, weight);
+    if (!fc_file.empty() && FT_New_Face(ft_library, fc_file.c_str(), 0, &out_face) == 0) {
+        out_path = fc_file;
+        return true;
+    }
+#endif
+    std::vector<std::string> filename_list;
+    get_possible_font_filenames(family, style, weight, filename_list);
+    for (const std::string& filename : filename_list) {
+        if (FT_New_Face(ft_library, filename.c_str(), 0, &out_face) == 0) {
+            out_path = filename;
+            return true;
+        }
+    }
+    return false;
+}
+
+FT_Face
+Layer_Freetype::load_font_uncached(const std::string& family, int style, int weight,
+                                    const synfig::filesystem::Path& canvas_path)
+{
+    FT_Face face = nullptr;
+    std::string path;
+    if (!resolve_and_open_face(family, style, weight, face, path))
+        return nullptr;
+
+#if HAVE_HARFBUZZ
+    hb_font_t* hb_font = hb_ft_font_create(face, nullptr);
+    FaceMetaData::add_to_face(face, path, hb_font);
+#else
+    FaceMetaData::add_to_face(face, path);
+#endif
+    return face; // NOT put into face_cache — caller owns it exclusively
+}

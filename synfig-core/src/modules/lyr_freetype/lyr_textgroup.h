@@ -58,7 +58,10 @@ private:
 	void detach_shared_param(const synfig::String& param);
 	size_t master_glyph_index_ = 0;
 	void rebuild_shared_registry();
-	void broadcast_dynamic_param(const synfig::String& param);   
+	void broadcast_dynamic_param(const synfig::String& param);
+	FT_Face variable_face_ = nullptr;   // private, exclusively-owned face for animated axes
+    synfig::Real    axis_scale_x_ = 1.0, axis_scale_y_ = 1.0; // cached from sync_glyphs, reused per-frame
+    void update_variable_axes(synfig::Time time) const;
 	
 protected:
     void on_canvas_set() override;     
@@ -77,7 +80,10 @@ private:
     synfig::ValueBase param_rotation;
     synfig::ValueBase param_offset;
     synfig::ValueBase param_anim_offset;
-    mutable synfig::Vector wave_offset_;  
+    mutable synfig::Vector wave_offset_;
+    uint32_t glyph_index_ = 0;
+    size_t line_index_ = 0;
+    synfig::Real   base_y_ = 0.0;
 
 public:  
     Layer_GlyphShape();  
@@ -90,6 +96,12 @@ public:
     synfig::ValueBase get_param(const synfig::String &param) const override;  
     Layer::Vocab get_param_vocab() const override;  
     void set_wave_offset(const synfig::Vector& v);
+    void set_glyph_index(uint32_t gi) { glyph_index_ = gi; }
+    uint32_t get_glyph_index() const { return glyph_index_; }
+    void set_line_index(size_t i) { line_index_ = i; }
+    size_t get_line_index() const { return line_index_; }
+    void set_base_y(synfig::Real y) { base_y_ = y; }
+    synfig::Real get_base_y() const { return base_y_; }
 
 	virtual Layer::Handle clone(etl::loose_handle<synfig::Canvas> canvas,  
                             const synfig::GUID& deriv_guid = synfig::GUID()) const override;  

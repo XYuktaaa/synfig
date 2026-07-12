@@ -115,6 +115,8 @@ public:
 	void reset_version() override {old_version=false;}
 
 	static FT_Face load_font_static(const std::string& family,int style,int weight,const synfig::filesystem::Path &canvas_path);    
+	static FT_Face load_font_uncached(const synfig::String& family, int style, int weight,
+                                   const synfig::filesystem::Path& canvas_path);
 
 #if HAVE_HARFBUZZ
 static hb_font_t* get_cached_hb_font(FT_Face face);

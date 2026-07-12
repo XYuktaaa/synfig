@@ -2,6 +2,8 @@
 #include "synfig/real.h"
 #include "synfig/value.h"
 #include "synfig/valuenodes/valuenode_angle.h"
+#include <cstddef>
+#include <freetype/ftoutln.h>
 #ifdef USING_PCH  
 # include "pch.h"  
 #else  
@@ -134,7 +136,11 @@ Layer_TextGroup::Layer_TextGroup()
     SET_STATIC_DEFAULTS();  
 }  
   
-Layer_TextGroup::~Layer_TextGroup(){}  
+Layer_TextGroup::~Layer_TextGroup()
+{
+    if (variable_face_)
+        FT_Done_Face(variable_face_);
+}
   
 String  
 Layer_TextGroup::get_local_name() const  
@@ -573,31 +579,101 @@ Layer_TextGroup::broadcast_dynamic_param(const String& param)
     changed();
 }
 
-static void  
-apply_variable_axes(FT_Face face, Real wght_value)  
-{  
-    if (!face || !FT_HAS_MULTIPLE_MASTERS(face))  
-        return;  
-  
-    FT_MM_Var* mm = nullptr;  
-    if (FT_Get_MM_Var(face, &mm) != 0 || !mm)  
-        return;  
-  
-    std::vector<FT_Fixed> coords(mm->num_axis);  
-    for (FT_UInt i = 0; i < mm->num_axis; ++i) {  
-        coords[i] = mm->axis[i].def;                 // keep default for undriven axes  
-        if (mm->axis[i].tag == FT_MAKE_TAG('w','g','h','t')) {  
-            FT_Fixed val = static_cast<FT_Fixed>(wght_value * 65536.0);  
-            if (val < mm->axis[i].minimum) val = mm->axis[i].minimum;  
-            if (val > mm->axis[i].maximum) val = mm->axis[i].maximum;  
-            coords[i] = val;  
-        }  
-    }  
-  
-    FT_Set_Var_Design_Coordinates(face, mm->num_axis, coords.data());  // use BEFORE freeing  
-    FT_Done_MM_Var(ft_library, mm);                                    // vector frees itself  
+static void
+apply_variable_axes(FT_Face face, Real wght_value)
+{
+    if (!face || !FT_HAS_MULTIPLE_MASTERS(face))
+        return;
+
+    FT_MM_Var* mm = nullptr;
+    if (FT_Get_MM_Var(face, &mm) != 0 || !mm)
+        return;
+
+    std::vector<FT_Fixed> coords(mm->num_axis);
+    int wght_index = -1;
+
+    for (FT_UInt i = 0; i < mm->num_axis; ++i) {
+        coords[i] = mm->axis[i].def;
+        if (mm->axis[i].tag == FT_MAKE_TAG('w','g','h','t')) {
+            wght_index = static_cast<int>(i);
+            FT_Fixed val = static_cast<FT_Fixed>(wght_value * 65536.0);
+            if (val < mm->axis[i].minimum) val = mm->axis[i].minimum;
+            if (val > mm->axis[i].maximum) val = mm->axis[i].maximum;
+            coords[i] = val;
+        }
+    }
+
+    if (wght_index < 0) {
+        synfig::warning("apply_variable_axes: font has no 'wght' axis");
+        FT_Done_MM_Var(ft_library, mm);
+        return;
+    }
+
+    FT_Error set_err = FT_Set_Var_Design_Coordinates(face, mm->num_axis, coords.data());
+    if (set_err) synfig::error("FT_Set_Var_Design_Coordinates failed: %d", set_err);
+
+    std::vector<FT_Fixed> readback(mm->num_axis);
+    FT_Error get_err = FT_Get_Var_Design_Coordinates(face, mm->num_axis, readback.data());
+    if (get_err) synfig::error("FT_Get_Var_Design_Coordinates failed: %d", get_err);
+    else synfig::info("readback wght[%d]: %ld", wght_index, (long)readback[wght_index]);
+
+    FT_Done_MM_Var(ft_library, mm);
 }  
 
+void Layer_TextGroup::update_variable_axes(Time time) const
+{
+    if (!variable_face_) return;
+    Canvas::Handle canvas = get_sub_canvas();
+    if (!canvas) return;
+
+    apply_variable_axes(variable_face_, param_var_weight.get(Real()));
+    const Real compress = param_compress.get(Real());
+    const Vector orient = param_orient.get(Vector());
+
+    std::map<size_t, std::vector<Layer_GlyphShape*>> lines;
+    for (auto iter = canvas->begin(); iter != canvas->end(); ++iter)
+        if (auto* gl = dynamic_cast<Layer_GlyphShape*>(iter->get()))
+            lines[gl->get_line_index()].push_back(gl);
+
+    for (auto& [line_idx, glist] : lines) {
+        // Pass 1: measure new line width from the variable face's own advances
+        Real pen_x = 0;
+        std::vector<Real> xs;
+        for (auto* gl : glist) {
+            xs.push_back(pen_x);
+            if (FT_Load_Glyph(variable_face_, gl->get_glyph_index(), FT_LOAD_DEFAULT) == 0)
+                pen_x += variable_face_->glyph->advance.x * compress;
+        }
+        Real line_width = pen_x;
+        Real shift_x = -orient[0] * line_width;
+
+        // Pass 2: reload outline + reposition each glyph
+        for (size_t i = 0; i < glist.size(); ++i) {
+            Layer_GlyphShape* gl = glist[i];
+            Real world_x = (xs[i] + shift_x) * axis_scale_x_;
+            gl->set_param("origin", ValueBase(Vector(world_x, gl->get_base_y())));
+
+            if (FT_Load_Glyph(variable_face_, gl->get_glyph_index(), FT_LOAD_DEFAULT) == 0 &&
+                variable_face_->glyph->format == FT_GLYPH_FORMAT_OUTLINE) {
+                // FT_Glyph ftglyph;
+                // if (!FT_Get_Glyph(variable_face_->glyph, &ftglyph)) {
+                    rendering::Contour::ChunkList chunks;
+                    text_processing::convert_outline_to_contours(
+                        &variable_face_->glyph->outline, chunks);
+                    // FT_Done_Glyph(ftglyph);
+                    for (auto& chunk : chunks) {
+                        chunk.p1[0]  *= axis_scale_x_; chunk.p1[1]  *= axis_scale_y_;
+                        chunk.pp0[0] *= axis_scale_x_; chunk.pp0[1] *= axis_scale_y_;
+                        chunk.pp1[0] *= axis_scale_x_; chunk.pp1[1] *= axis_scale_y_;
+                    }
+                    gl->set_glyph_chunks(chunks);
+                // }
+            }
+            gl->force_sync();
+            gl->changed();
+        }
+   	}
+}
 
 void Layer_TextGroup::update_wave_offsets(Time time, bool force_sync_after) const  
 {  
@@ -635,6 +711,7 @@ void Layer_TextGroup::set_time_vfunc(IndependentContext context, Time time) cons
     Canvas::Handle canvas = get_sub_canvas();  
     if (!canvas) return;  
     update_wave_offsets(time, false);
+    update_variable_axes(time);
         
     Time stagger  = param_stagger_delay.get(Time());
     Real dilation = get_time_dilation();
@@ -671,7 +748,7 @@ Layer_TextGroup::sync_glyphs()
         param_style.get(int()),  
         param_weight.get(int()),  
         get_canvas() ? get_canvas()->get_file_path() : synfig::filesystem::Path()  
-    );  
+    );
 
     Canvas::Handle canvas = get_sub_canvas();  
     if (!canvas) return;  
@@ -682,8 +759,7 @@ Layer_TextGroup::sync_glyphs()
         signal_subcanvas_changed()();  
         changed();  
         return;  
-    }  
-	apply_variable_axes(face, param_var_weight.get(Real()));    
+    } 
       
     const bool    grid_fit    = param_grid_fit.get(bool());  
     const Vector  orient      = param_orient.get(Vector());  
@@ -695,18 +771,29 @@ Layer_TextGroup::sync_glyphs()
     const Vector size    = param_size.get(Vector()) * 2;  
     const Real   scale_x = size[0] / face->units_per_EM;  
     const Real   scale_y = size[1] / face->units_per_EM;  
-  
+
+  	if (variable_face_) { FT_Done_Face(variable_face_); variable_face_ = nullptr; }
+if (FT_HAS_MULTIPLE_MASTERS(face)) {
+    variable_face_ = Layer_Freetype::load_font_uncached(
+        param_family.get(std::string()), param_style.get(int()), param_weight.get(int()),
+        get_canvas() ? get_canvas()->get_file_path() : synfig::filesystem::Path());
+    if (variable_face_)
+        FT_Set_Char_Size(variable_face_, 0, 64 * 64, 72, 72); // match `face`'s size setup
+}
+axis_scale_x_ = scale_x;
+axis_scale_y_ = scale_y;
     const int load_flags = grid_fit  
         ? FT_LOAD_NO_SCALE  
-        : (FT_LOAD_NO_SCALE | FT_LOAD_NO_HINTING);  
-    
+        : (FT_LOAD_NO_SCALE | FT_LOAD_NO_HINTING);
+       
     auto lines =  synfig::text_processing::fetch_text_lines(  
         text, param_direction.get(int())); 
-    #if HAVE_HARFBUZZ
-hb_font_t* font =
-    Layer_Freetype::get_cached_hb_font(face);
-
-    hb_font_set_scale(
+   
+	#if HAVE_HARFBUZZ
+	hb_font_t* font =Layer_Freetype::get_cached_hb_font(face);
+	if (font)
+    hb_ft_font_changed(font);
+	hb_font_set_scale(
     	font,
     	face->units_per_EM,
     	face->units_per_EM
@@ -724,6 +811,8 @@ auto shaped_lines =
         uint32_t glyph_index;
         uint32_t cluster;  
         Vector pen_offset;
+        size_t   line_index ; // which source line this glyph belongs to
+    	Vector   world_pos;      // final scaled+shifted position (second pass)
     };  
   
     std::vector<std::vector<GlyphData>> line_glyphs;  
@@ -735,7 +824,7 @@ auto shaped_lines =
     for (const auto& shaped_line : shaped_lines)  
     {  
         std::vector<GlyphData> cur_line;  
-        
+
         Vector offset(0, line_start[1]);
 
 		for (const auto& sg : shaped_line)
@@ -743,19 +832,8 @@ auto shaped_lines =
     		FT_UInt glyph_index = sg.glyph_index;
 
     		if (FT_Load_Glyph(face,glyph_index,load_flags))
-        		continue;
-    // 		FT_Set_Char_Size(
-    // face,
-    // 0,
-    // 64 * 64,    // 64 pt
-    // 72,
-    // 72);
-
-FT_Load_Glyph(face, glyph_index, FT_LOAD_DEFAULT);
-    		synfig::info("advance=%ld", face->glyph->advance.x);
-synfig::info("width=%ld", face->glyph->metrics.width);
-synfig::info("height=%ld", face->glyph->metrics.height);
-
+	       		continue;
+ 		
     		FT_Glyph ftglyph;
     		if (FT_Get_Glyph(face->glyph, &ftglyph))
         		continue;
@@ -764,21 +842,23 @@ synfig::info("height=%ld", face->glyph->metrics.height);
 
     		if (ftglyph->format ==FT_GLYPH_FORMAT_OUTLINE)
     		{
-        		FT_OutlineGlyph og = reinterpret_cast<FT_OutlineGlyph>(ftglyph);
+        		// FT_OutlineGlyph og = reinterpret_cast<FT_OutlineGlyph>(ftglyph);
 
-        		synfig::text_processing::convert_outline_to_contours(og,outline);
+        		synfig::text_processing::convert_outline_to_contours(&face->glyph->outline,outline);
         		        		
-        		if (!outline.empty())
+        		if (!outline.empty())                                                                                                                                                                                                      
         		{
             		Vector glyph_pos = offset; 
     				glyph_pos[0] += sg.x_offset * compress;
     				glyph_pos[1] += sg.y_offset;
             		cur_line.push_back({
-                	outline,
+                	std::move(outline),
                 	sg.glyph_index,
                 	sg.cluster,
-                	glyph_pos
-            		});
+                	glyph_pos,
+                	0,
+                	Vector()
+                	});
         		}
     		}
 
@@ -818,7 +898,7 @@ synfig::info("height=%ld", face->glyph->metrics.height);
                 chunk.pp1[0] *= scale_x;  chunk.pp1[1] *= scale_y;  
             }  
   
-	        glyphs.push_back({glyph.outline,glyph.glyph_index, glyph.cluster, world_pos});    
+	        glyphs.push_back(std::move(glyph));    
         }  
     }  
    
@@ -885,8 +965,11 @@ synfig::info("height=%ld", face->glyph->metrics.height);
 
 		(*layer_iter)->set_description(glyph_key);
     	if (glyph_layer) { 
-			glyph_layer->set_param("origin",ValueBase(glyph.pen_offset));
-			glyph_layer->set_glyph_chunks(glyph.outline);	
+			glyph_layer->set_param("origin", ValueBase(glyph.world_pos));
+        	glyph_layer->set_glyph_chunks(glyph.outline);
+        	glyph_layer->set_glyph_index(glyph.glyph_index);
+        	glyph_layer->set_line_index(glyph.line_index);
+        	glyph_layer->set_base_y(glyph.world_pos[1]);
 	       	(*layer_iter)->set_param("color",  ValueBase(color));  
         	(*layer_iter)->set_param("invert", ValueBase(invert));
         	
