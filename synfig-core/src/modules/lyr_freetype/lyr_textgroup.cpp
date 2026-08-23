@@ -104,9 +104,6 @@ Layer_TextGroup::on_canvas_set()
 {
     Layer_PasteCanvas::on_canvas_set();
 
-    if (dynamic_param_list().count("share_target"))
-        disconnect_dynamic_param("share_target");
-
     auto it = dynamic_param_list().find("share_animations");
 
     if (it != dynamic_param_list().end() && it->second)
@@ -136,7 +133,6 @@ Layer_TextGroup::Layer_TextGroup()
 	  param_color(ValueBase(Color::black())),
 	  param_stagger_order(ValueBase(int(StaggerOrder::STAGGER_ORDER_FORWARD))),
 	  param_stagger_seed(ValueBase(int(0))),
-	  param_share_target(ValueBase(int(SHARE_TARGET_NONE))),
 	  param_share_animations(ValueBase(std::vector<AnimShare>()))
 {
 	SET_INTERPOLATION_DEFAULTS();
@@ -223,23 +219,10 @@ Layer_TextGroup::set_param(const String& param, const ValueBase& value)
 			get_canvas()->get_root()->signal_force_refresh()();
 	});
 
-	IMPORT_VALUE_PLUS(
-    param_share_target,
-    (
-        [&]()
-        {
-            if (dynamic_param_list().count("share_target"))
-                pending_dynamic_cleanup_.insert("share_target");
-
-            // int action_idx = param_share_target.get(int());
-
-            param_share_target = ValueBase(int(SHARE_TARGET_NONE));
-        })());
-
 	IMPORT_VALUE_PLUS(param_share_animations, {
     	// If a dynamic AnimShareList is already connected, that's the source
-    	// // of truth — connect_dynamic_param()/on_canvas_set() already rebuild
-    	// // shared_entries_ from it. Don't fight that here.
+    	// of truth — connect_dynamic_param()/on_canvas_set() already rebuild
+    	// shared_entries_ from it. Don't fight that here.
     	if (!dynamic_param_list().count("share_animations")) {
         	rebuild_shared_entries_from_param();
     	}
@@ -278,7 +261,6 @@ Layer_TextGroup::get_param(const String& param) const
 	EXPORT_VALUE(param_stagger_delay);
 	EXPORT_VALUE(param_stagger_order);
 	EXPORT_VALUE(param_stagger_seed);
-	EXPORT_VALUE(param_share_target);
 	EXPORT_VALUE(param_share_animations);
 	EXPORT_NAME();
 	EXPORT_VERSION();
@@ -405,41 +387,7 @@ Layer_TextGroup::get_param_vocab() const
 			.add_enum_value(static_cast<int>(StaggerOrder::STAGGER_ORDER_REVERSE), "reverse", _("Reverse"))
 			.add_enum_value(static_cast<int>(StaggerOrder::STAGGER_ORDER_CENTER_OUT), "center_out",	_("Center Out"))
 			.add_enum_value(static_cast<int>(StaggerOrder::STAGGER_ORDER_RANDOM), "random", _("Random")));
-		{
-			last_share_actions_.clear();
-			last_share_actions_.push_back(ShareAction{String(), ShareMode::SHARE});
 
-			ParamDesc share_desc("share_target");
-			share_desc.set_local_name(_("Add / Update / Remove Shared Animation"))
-			.set_description(
-				_("Select a glyph parameter to share (using the current "
-				  "Stagger Delay/Order), re-time it, or unshare it"))
-			.set_hint("enum")
-			.set_static(true)
-			.add_enum_value(SHARE_TARGET_NONE, "none", _("— Select —"));
-
-		for (const auto& c : build_share_choices())
-		{
-			int share_idx = (int)last_share_actions_.size();
-			last_share_actions_.push_back(
-				ShareAction{c.param, ShareMode::SHARE});
-			String share_label =
-				c.already_shared
-					? strprintf(
-						  _("Share/Update: %s  (currently %.3fs, order %d)"),
-						  c.param.c_str(), (double)c.cur_delay, c.cur_order)
-					: (_("Share: ") + c.param);
-			share_desc.add_enum_value(share_idx, "share_" + c.param,
-									  share_label);
-
-			int unshare_idx = (int)last_share_actions_.size();
-			last_share_actions_.push_back(
-				ShareAction{c.param, ShareMode::UNSHARE});
-			share_desc.add_enum_value(unshare_idx, "unshare_" + c.param,
-									  _("Unshare: ") + c.param);
-		}
-		ret.push_back(share_desc);
-	}
 	ret.push_back(
 	ParamDesc("stagger_seed")
 		.set_local_name(_("Stagger Random Seed"))
@@ -606,29 +554,6 @@ Layer_TextGroup::get_shareable_params() const
 			if (kv.second)
 				params.push_back(kv.first);
 	return params;
-}
-
-std::vector<Layer_TextGroup::ShareChoice>
-Layer_TextGroup::build_share_choices() const
-{
-	std::vector<ShareChoice> choices;
-	for (const auto& p : get_shareable_params())
-	{
-		ShareChoice c;
-		c.param = p;
-		for (const auto& e : shared_entries_)
-		{
-			if (e.valid && e.target_param == p)
-			{
-				c.already_shared = true;
-				c.cur_delay = e.delay;
-				c.cur_order = e.order;
-				break;
-			}
-		}
-		choices.push_back(c);
-	}
-	return choices;
 }
 
 int

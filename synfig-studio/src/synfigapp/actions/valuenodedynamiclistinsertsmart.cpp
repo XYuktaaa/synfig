@@ -37,6 +37,7 @@
 
 #include "valuenodedynamiclistinsertsmart.h"
 #include <synfigapp/canvasinterface.h>
+#include <synfig/valuenodes/valuenode_animsharelist.h>
 
 #include <synfigapp/localization.h>
 
@@ -170,6 +171,10 @@ Action::ValueNodeDynamicListInsertSmart::prepare()
 	// HACK
 	if(!first_time())
 		return;
+	const ValueNode_AnimShareList::Handle anim_share_list =
+    ValueNode_AnimShareList::Handle::cast_dynamic(value_node);
+
+	const bool is_anim_share_list = static_cast<bool>(anim_share_list);
 
 	// If we are in animate editing mode
 	if(get_edit_mode()&MODE_ANIMATE)
@@ -234,24 +239,27 @@ Action::ValueNodeDynamicListInsertSmart::prepare()
 
 			add_action(action);
 
-			// This commented code creates a 'off' Active Point at time.begin()
-			// that produces bugs like
-			action=Action::create("ActivepointSetOff");
+			if (!is_anim_share_list)
+			{
+				// This commented code creates a 'off' Active Point at time.begin()
+				// that produces bugs like
+				action=Action::create("ActivepointSetOff");
 
-			if(!action)
-				throw Error(_("Unable to find action \"ActivepointSetOff\""));
+    			if(!action)
+        			throw Error(_("Unable to find action \"ActivepointSetOff\""));
 
-			action->set_param("edit_mode",MODE_ANIMATE);
-			action->set_param("canvas",get_canvas());
-			action->set_param("canvas_interface",get_canvas_interface());
-			action->set_param("time",Time::begin());
-			action->set_param("origin",origin);
-			action->set_param("value_desc",ValueDesc(value_node,index));
+    			action->set_param("edit_mode",MODE_ANIMATE);
+    			action->set_param("canvas",get_canvas());
+    			action->set_param("canvas_interface",get_canvas_interface());
+    			action->set_param("time",Time::begin());
+    			action->set_param("origin",origin);
+    			action->set_param("value_desc",ValueDesc(value_node,index));
 
-			if(!action->is_ready())
-				throw Error(Error::TYPE_NOTREADY);
+    			if(!action->is_ready())
+        			throw Error(Error::TYPE_NOTREADY);
 
-			add_action(action);
+    			add_action(action);
+			}
 			// If we are inserting the first element, or don't want to
 			// keep the shape, there is nothing more to do
 			if(value_node->list.size() > 0 && keep_shape)
@@ -323,6 +331,8 @@ Action::ValueNodeDynamicListInsertSmart::prepare()
 			}
 		}
 
+		if (is_anim_share_list)
+    		return;
 		// Now we set the activepoint up and then we'll be done
 		Action::Handle action(Action::create("ActivepointSetOn"));
 

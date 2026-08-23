@@ -108,7 +108,6 @@ private:
 	synfig::ValueBase param_color;
 	synfig::ValueBase param_stagger_order;
 	synfig::ValueBase param_stagger_seed;
-	synfig::ValueBase param_share_target;
 	synfig::ValueBase param_share_animations;
 
 public:
@@ -140,33 +139,6 @@ private:
 	mutable bool pending_shared_rebuild_ = false;
     void rebuild_shared_entries_from_valuenode(const synfig::ValueNode::Handle& x);
     sigc::connection shared_animations_changed_conn_;
-
-	struct ShareChoice
-	{
-		synfig::String param;
-		bool already_shared = false;
-		synfig::Time cur_delay;
-		int cur_order = 0;
-	};
-	enum class ShareMode
-	{
-		SHARE,
-		UNSHARE
-	};
-	struct ShareAction
-	{
-		synfig::String param;
-		ShareMode mode = ShareMode::SHARE;
-
-		ShareAction() = default;
-		ShareAction(synfig::String p, ShareMode m)
-			: param(std::move(p)), mode(m)
-		{
-		}
-	};
-
-	std::vector<ShareChoice> build_share_choices() const;
-	mutable std::vector<ShareAction> last_share_actions_;
 
 	bool resolve_and_export_node(SharedEntry& entry);
 	bool share_param(const synfig::String& param, synfig::Time delay,
