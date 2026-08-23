@@ -180,6 +180,8 @@ src/modules/mptr_mplayer/mptr_mplayer.h
 src/synfig/activepoint.cpp
 src/synfig/activepoint.h
 src/synfig/angle.h
+src/synfig/animshare.cpp
+src/synfig/animshare.h
 src/synfig/base_types.cpp
 src/synfig/base_types.h
 src/synfig/blinepoint.cpp
@@ -340,6 +342,8 @@ src/synfig/valuenodes/valuenode_animated.cpp
 src/synfig/valuenodes/valuenode_animated.h
 src/synfig/valuenodes/valuenode_animatedfile.cpp
 src/synfig/valuenodes/valuenode_animatedinterface.cpp
+src/synfig/valuenodes/valuenode_animsharelist.cpp
+src/synfig/valuenodes/valuenode_animsharelist.h
 src/synfig/valuenodes/valuenode_atan2.cpp
 src/synfig/valuenodes/valuenode_atan2.h
 src/synfig/valuenodes/valuenode_average.cpp
