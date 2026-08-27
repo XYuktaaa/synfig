@@ -112,10 +112,18 @@ Layer_TextGroup::on_canvas_set()
         rebuild_shared_entries_from_valuenode(it->second);
     }
     else
-    {
-        shared_animations_changed_conn_.disconnect();
-        rebuild_shared_entries_from_param();
-    }
+	{
+    	shared_animations_changed_conn_.disconnect();
+
+    	auto list_node = ValueNode_AnimShareList::create(
+        	ValueBase(std::vector<AnimShare>()),
+        	get_canvas());
+
+    	if (list_node)
+    	{
+        	connect_dynamic_param("share_animations",ValueNode::Handle(list_node));
+    	}
+	}
 }
 
 Layer_TextGroup::Layer_TextGroup()
@@ -132,8 +140,7 @@ Layer_TextGroup::Layer_TextGroup()
 	  param_font(ValueBase(std::string())),
 	  param_color(ValueBase(Color::black())),
 	  param_stagger_order(ValueBase(int(StaggerOrder::STAGGER_ORDER_FORWARD))),
-	  param_stagger_seed(ValueBase(int(0))),
-	  param_share_animations(ValueBase(std::vector<AnimShare>()))
+	  param_stagger_seed(ValueBase(int(0)))
 {
 	SET_INTERPOLATION_DEFAULTS();
 	SET_STATIC_DEFAULTS();
@@ -213,15 +220,6 @@ Layer_TextGroup::set_param(const String& param, const ValueBase& value)
 			get_canvas()->get_root()->signal_force_refresh()();
 	});
 
-	IMPORT_VALUE_PLUS(param_share_animations, {
-    	// If a dynamic AnimShareList is already connected, that's the source
-    	// of truth — connect_dynamic_param()/on_canvas_set() already rebuild
-    	// shared_entries_ from it. Don't fight that here.
-    	if (!dynamic_param_list().count("share_animations")) {
-        	rebuild_shared_entries_from_param();
-    	}
-	});
-
 	return Layer_PasteCanvas::set_param(param, value);
 }
 
@@ -255,7 +253,6 @@ Layer_TextGroup::get_param(const String& param) const
 	EXPORT_VALUE(param_stagger_delay);
 	EXPORT_VALUE(param_stagger_order);
 	EXPORT_VALUE(param_stagger_seed);
-	EXPORT_VALUE(param_share_animations);
 	EXPORT_NAME();
 	EXPORT_VERSION();
 	return Layer_PasteCanvas::get_param(param);
@@ -940,11 +937,9 @@ Layer_TextGroup::apply_shared_entries_from_items(const std::vector<AnimShare>& i
 }
 
 void
-Layer_TextGroup::rebuild_shared_entries_from_param()
+Layer_TextGroup::rebuild_shared_entries_from_dynamic_param()
 {
-	// The real persisted value is the dynamic AnimShareList — see the
-	// comment on param_share_animations in the header for why we don't
-	// read the static param here.
+
 	auto existing = dynamic_param_list().find("share_animations");
 	auto list_node = existing != dynamic_param_list().end()
 		? ValueNode_AnimShareList::Handle::cast_dynamic(existing->second)
@@ -1064,7 +1059,7 @@ Layer_TextGroup::set_time_vfunc(IndependentContext context, Time time) const
     	Layer_TextGroup* self = const_cast<Layer_TextGroup*>(this);
 
     	self->pending_shared_rebuild_ = false;
-    	self->rebuild_shared_entries_from_param();
+    	self->rebuild_shared_entries_from_dynamic_param();
 	}
 
 	Time base_time = time * get_time_dilation() + get_time_offset();

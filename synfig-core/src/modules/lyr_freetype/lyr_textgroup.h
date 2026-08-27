@@ -108,7 +108,6 @@ private:
 	synfig::ValueBase param_color;
 	synfig::ValueBase param_stagger_order;
 	synfig::ValueBase param_stagger_seed;
-	synfig::ValueBase param_share_animations;
 
 public:
 	Layer_TextGroup();
@@ -146,7 +145,7 @@ private:
 	bool unshare_param(const synfig::String& param);
 	void on_shared_node_deleted(synfig::String target_param);
 
-	void rebuild_shared_entries_from_param();
+	void rebuild_shared_entries_from_dynamic_param();
 	void apply_shared_entries_from_items(const std::vector<synfig::AnimShare>& items);
 	void retry_pending_shared_entries();
 	void push_shared_animations_param();
