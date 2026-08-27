@@ -158,9 +158,9 @@ Layer_TextGroup::get_local_name() const
 void
 Layer_TextGroup::request_full_resync()
 {
+    sync_glyphs();
 	if (get_canvas())
 		get_canvas()->get_root()->signal_force_refresh()();
-	sync_glyphs();
 }
 
 bool
@@ -201,14 +201,8 @@ Layer_TextGroup::set_param(const String& param, const ValueBase& value)
 	// onto that one SharedEntry. This keeps entries independent: rotation
 	// can stagger at one rate, scale at another, and touching these sliders
 	// never silently changes an entry you're not currently committing.
-	IMPORT_VALUE_PLUS(param_stagger_delay, {
-		if (get_canvas())
-			get_canvas()->get_root()->signal_force_refresh()();
-	});
-	IMPORT_VALUE_PLUS(param_stagger_order, {
-		if (get_canvas())
-			get_canvas()->get_root()->signal_force_refresh()();
-	});
+	IMPORT_VALUE_PLUS(param_stagger_delay, {});
+	IMPORT_VALUE_PLUS(param_stagger_order, {});
 	// Unlike delay/order, the seed isn't staged-then-stamped onto a
 	// SharedEntry — stagger_perm_ is live, shared data that any
 	// RANDOM-order entry reads immediately, so a seed change has to
