@@ -378,8 +378,7 @@ Layer_GlyphShape::get_param_vocab() const
 					  .set_description(_("Per-glyph rotation")));
 	ret.push_back(ParamDesc("scale")
 					  .set_local_name(_("Scale"))
-					  .set_description(_("Per-glyph scale"))
-					  .set_is_distance());
+					  .set_description(_("Per-glyph scale")));
 	ret.push_back(ParamDesc("anim_offset")
 					  .set_local_name(_("Animation Offset"))
 					  .set_origin("origin")
