@@ -170,8 +170,24 @@ synfig::ValueNode_Composite::ValueNode_Composite(const ValueBase &value, Canvas:
 	if (type == type_anim_share)
 	{
     	AnimShare a(value.get(AnimShare()));
-    	set_link("param", ValueNode_Const::create(a.get_param()));   // String
-    	set_link("delay", ValueNode_Const::create(a.get_delay()));   // Time
+
+    	ValueNode_Const::Handle param_node =
+        	ValueNode_Const::Handle::cast_dynamic(
+            	ValueNode_Const::create(a.get_param()));
+    	if (param_node)
+    	{
+        	param_node->set_static(true);
+        	set_link("param", param_node);
+    	}
+
+    	ValueNode_Const::Handle delay_node =
+        	ValueNode_Const::Handle::cast_dynamic(
+            ValueNode_Const::create(a.get_delay()));
+    	if (delay_node)
+    	{
+        	delay_node->set_static(true);
+        	set_link("delay", delay_node);
+    	}
 
     	ValueNode_Const::Handle order_node =
         	ValueNode_Const::Handle::cast_dynamic(
@@ -857,7 +873,9 @@ ValueNode_Composite::get_children_vocab_vfunc()const
 	else
 	if (type == type_anim_share)
 	{
-		ret.push_back(ParamDesc("param").set_local_name(_("Parameter")));
+		ret.push_back(ParamDesc("param")
+        		.set_local_name(_("Parameter"))
+        		.set_hint("anim_share_param"));
 		ret.push_back(ParamDesc("delay").set_local_name(_("Delay")));
 		ret.push_back(ParamDesc("order").set_local_name(_("Order"))
 			.set_hint("enum").set_static(true)

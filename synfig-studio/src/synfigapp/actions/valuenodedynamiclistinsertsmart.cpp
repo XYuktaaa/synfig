@@ -176,6 +176,28 @@ Action::ValueNodeDynamicListInsertSmart::prepare()
 
 	const bool is_anim_share_list = static_cast<bool>(anim_share_list);
 
+	// AnimShareList membership is structural, never animated.
+    if (is_anim_share_list)
+    {
+        Action::Handle action(Action::create("ValueNodeDynamicListInsert"));
+
+        if (!action)
+            throw Error(_("Unable to find action (bug)"));
+
+        action->set_param("canvas", get_canvas());
+        action->set_param("canvas_interface", get_canvas_interface());
+        action->set_param("time", time);
+        action->set_param("origin", origin);
+        action->set_param("value_desc", ValueDesc(value_node, index));
+
+        if (!action->is_ready())
+            throw Error(Error::TYPE_NOTREADY);
+
+        add_action(action);
+        return;
+    }
+
+
 	// If we are in animate editing mode
 	if(get_edit_mode()&MODE_ANIMATE)
 	{
@@ -239,27 +261,6 @@ Action::ValueNodeDynamicListInsertSmart::prepare()
 
 			add_action(action);
 
-			if (!is_anim_share_list)
-			{
-				// This commented code creates a 'off' Active Point at time.begin()
-				// that produces bugs like
-				action=Action::create("ActivepointSetOff");
-
-    			if(!action)
-        			throw Error(_("Unable to find action \"ActivepointSetOff\""));
-
-    			action->set_param("edit_mode",MODE_ANIMATE);
-    			action->set_param("canvas",get_canvas());
-    			action->set_param("canvas_interface",get_canvas_interface());
-    			action->set_param("time",Time::begin());
-    			action->set_param("origin",origin);
-    			action->set_param("value_desc",ValueDesc(value_node,index));
-
-    			if(!action->is_ready())
-        			throw Error(Error::TYPE_NOTREADY);
-
-    			add_action(action);
-			}
 			// If we are inserting the first element, or don't want to
 			// keep the shape, there is nothing more to do
 			if(value_node->list.size() > 0 && keep_shape)
