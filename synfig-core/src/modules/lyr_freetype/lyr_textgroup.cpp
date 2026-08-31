@@ -135,11 +135,11 @@ Layer_TextGroup::Layer_TextGroup()
 	  param_compress(ValueBase(Real(1.0))),
 	  param_vcompress(ValueBase(Real(1.0))),
 	  param_orient(ValueBase(Vector(0.5, 0.5))),
-	  param_use_kerning(ValueBase(true)), param_grid_fit(ValueBase(false)),
-	  param_direction(ValueBase(0)), param_stagger_delay(ValueBase(Time(0.0))),
+	  param_use_kerning(ValueBase(true)),
+	  param_grid_fit(ValueBase(false)),
+	  param_direction(ValueBase(0)),
 	  param_font(ValueBase(std::string())),
 	  param_color(ValueBase(Color::black())),
-	  param_stagger_order(ValueBase(int(StaggerOrder::STAGGER_ORDER_FORWARD))),
 	  param_stagger_seed(ValueBase(int(0)))
 {
 	SET_INTERPOLATION_DEFAULTS();
@@ -202,18 +202,6 @@ Layer_TextGroup::set_param(const String& param, const ValueBase& value)
 		changed();
 	});
 
-	// Stagger Delay/Order are *staging* values only — they do nothing on
-	// their own. They're read at the moment a param name is committed via
-	// "Add Shared Animation", which stamps them
-	// onto that one SharedEntry. This keeps entries independent: rotation
-	// can stagger at one rate, scale at another, and touching these sliders
-	// never silently changes an entry you're not currently committing.
-	IMPORT_VALUE_PLUS(param_stagger_delay, {});
-	IMPORT_VALUE_PLUS(param_stagger_order, {});
-	// Unlike delay/order, the seed isn't staged-then-stamped onto a
-	// SharedEntry — stagger_perm_ is live, shared data that any
-	// RANDOM-order entry reads immediately, so a seed change has to
-	// rebuild it right away rather than waiting for the next glyph resync.
 	IMPORT_VALUE_PLUS(param_stagger_seed, {
 		rebuild_stagger_permutation();
 		if (get_canvas())
@@ -250,8 +238,6 @@ Layer_TextGroup::get_param(const String& param) const
 	EXPORT_VALUE(param_grid_fit);
 	EXPORT_VALUE(param_color);
 	EXPORT_VALUE(param_font);
-	EXPORT_VALUE(param_stagger_delay);
-	EXPORT_VALUE(param_stagger_order);
 	EXPORT_VALUE(param_stagger_seed);
 	EXPORT_NAME();
 	EXPORT_VERSION();
@@ -363,22 +349,6 @@ Layer_TextGroup::get_param_vocab() const
 	ret.push_back(ParamDesc("grid_fit")
 					  .set_local_name(_("Grid Fit"))
 					  .set_description(_("Use grid fitting")));
-	ret.push_back(ParamDesc("stagger_delay")
-					  .set_local_name(_("Stagger Delay"))
-					  .set_description(
-						  _("Time offset between consecutive glyph animations"))
-					  .set_hint("time"));
-	ret.push_back(
-		ParamDesc("stagger_order")
-			.set_local_name(_("Stagger Order"))
-			.set_description(_("Order in which glyphs are staggered in time"))
-			.set_hint("enum")
-			.set_static(true)
-			.add_enum_value(static_cast<int>(StaggerOrder::STAGGER_ORDER_FORWARD), "forward", _("Forward"))
-			.add_enum_value(static_cast<int>(StaggerOrder::STAGGER_ORDER_REVERSE), "reverse", _("Reverse"))
-			.add_enum_value(static_cast<int>(StaggerOrder::STAGGER_ORDER_CENTER_OUT), "center_out",	_("Center Out"))
-			.add_enum_value(static_cast<int>(StaggerOrder::STAGGER_ORDER_RANDOM), "random", _("Random")));
-
 	ret.push_back(
 	ParamDesc("stagger_seed")
 		.set_local_name(_("Stagger Random Seed"))

@@ -103,10 +103,8 @@ private:
 	synfig::ValueBase param_use_kerning;
 	synfig::ValueBase param_grid_fit;
 	synfig::ValueBase param_direction;
-	synfig::ValueBase param_stagger_delay;
 	synfig::ValueBase param_font;
 	synfig::ValueBase param_color;
-	synfig::ValueBase param_stagger_order;
 	synfig::ValueBase param_stagger_seed;
 
 public:
