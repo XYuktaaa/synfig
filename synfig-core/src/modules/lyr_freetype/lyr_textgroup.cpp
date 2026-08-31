@@ -880,6 +880,7 @@ Layer_TextGroup::push_shared_animations_param()
 
 	changed();
 	signal_dynamic_param_changed()("share_animations");
+	rebuild_shared_entries_from_dynamic_param();
 }
 
 void
@@ -939,58 +940,43 @@ Layer_TextGroup::apply_shared_entries_from_items(const std::vector<AnimShare>& i
 void
 Layer_TextGroup::rebuild_shared_entries_from_dynamic_param()
 {
+    auto existing = dynamic_param_list().find("share_animations");
 
-	auto existing = dynamic_param_list().find("share_animations");
-	auto list_node = existing != dynamic_param_list().end()
-		? ValueNode_AnimShareList::Handle::cast_dynamic(existing->second)
-		: ValueNode_AnimShareList::Handle();
+    if (existing == dynamic_param_list().end() || !existing->second)
+        return;
 
-	if (!list_node)
-	{
-		shared_entries_.clear();
-		attach_shared_entries();
-		return;
-	}
-
-	std::vector<AnimShare> items;
-	for (const auto& entry : list_node->list)
-	{
-		if (!entry.value_node)
-			continue;
-
-		auto composite = ValueNode_Composite::Handle::cast_dynamic(entry.value_node);
-		if (!composite)
-			continue;
-
-		ValueBase value = (*composite)(Time(0));
-		if (value.get_type() != type_anim_share)
-			continue;
-
-		items.push_back(value.get(AnimShare()));
-	}
-
-	apply_shared_entries_from_items(items);
+    rebuild_shared_entries_from_valuenode(existing->second);
 }
 
 void
-Layer_TextGroup::rebuild_shared_entries_from_valuenode(const ValueNode::Handle& x)
+Layer_TextGroup::rebuild_shared_entries_from_valuenode(
+    const ValueNode::Handle& x)
 {
-	if (!x)
-		return;
+    if (!x)
+        return;
 
-	ValueBase v = (*x)(Time(0));
-	if (v.get_type() != type_list)
-		return;
+    auto list_node =
+        ValueNode_AnimShareList::Handle::cast_dynamic(x);
 
-	std::vector<AnimShare> items;
-	for (const ValueBase& item : v.get_list())
-	{
-		if (item.get_type() != type_anim_share)
-			continue;
-		items.push_back(item.get(AnimShare()));
-	}
+    if (!list_node)
+        return;
 
-	apply_shared_entries_from_items(items);
+    std::vector<AnimShare> items;
+
+    for (const auto& entry : list_node->list)
+    {
+        if (!entry.value_node)
+            continue;
+
+        ValueBase value = (*entry.value_node)(Time(0));
+
+        if (value.get_type() != type_anim_share)
+            continue;
+
+        items.push_back(value.get(AnimShare()));
+    }
+
+    apply_shared_entries_from_items(items);
 }
 
 bool
@@ -1001,7 +987,6 @@ Layer_TextGroup::connect_dynamic_param(
     bool ret = Layer_PasteCanvas::connect_dynamic_param(param, x);
 
     if (ret && param == "share_animations"){
-        rebuild_shared_entries_from_valuenode(x);
         connect_shared_animations_signal(x);
     }
 
