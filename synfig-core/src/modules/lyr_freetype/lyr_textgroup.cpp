@@ -259,6 +259,23 @@ Layer::Vocab
 Layer_TextGroup::get_param_vocab() const
 {
 	Layer::Vocab ret(Layer_PasteCanvas::get_param_vocab());
+	ret.push_back(
+		ParamDesc("share_animations")
+			.set_local_name(_("Share Animation"))
+			.set_description(_("Glyph parameters shared across all glyphs, "
+							   "each with its own stagger delay/order"))
+			.set_static(true));
+
+	ret.push_back(
+		ParamDesc("stagger_seed")
+			.set_local_name(_("Stagger Random Seed"))
+			.set_description(
+				_("Seed used to generate the Random stagger order. Has no "
+			  	"effect unless Stagger Order is set to Random, but "
+			  	"remains visible/editable regardless so a seed can be "
+			  	"chosen in advance"))
+			.set_hint("int"));
+
 	ret.push_back(ParamDesc("text")
 					  .set_local_name(_("Text"))
 					  .set_description(
@@ -349,23 +366,6 @@ Layer_TextGroup::get_param_vocab() const
 	ret.push_back(ParamDesc("grid_fit")
 					  .set_local_name(_("Grid Fit"))
 					  .set_description(_("Use grid fitting")));
-	ret.push_back(
-	ParamDesc("stagger_seed")
-		.set_local_name(_("Stagger Random Seed"))
-		.set_description(
-			_("Seed used to generate the Random stagger order. Has no "
-			  "effect unless Stagger Order is set to Random, but "
-			  "remains visible/editable regardless so a seed can be "
-			  "chosen in advance"))
-		.set_hint("int"));
-
-	ret.push_back(
-		ParamDesc("share_animations")
-			.set_local_name(_("Share Animation"))
-			.set_description(_("Glyph parameters shared across all glyphs, "
-							   "each with its own stagger delay/order"))
-			.set_static(true));
-			
 	return ret;
 }
 

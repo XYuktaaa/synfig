@@ -174,10 +174,8 @@ Action::ValueNodeDynamicListInsertSmart::prepare()
 	const ValueNode_AnimShareList::Handle anim_share_list =
     ValueNode_AnimShareList::Handle::cast_dynamic(value_node);
 
-	const bool is_anim_share_list = static_cast<bool>(anim_share_list);
-
 	// AnimShareList membership is structural, never animated.
-    if (is_anim_share_list)
+    if (anim_share_list)
     {
         Action::Handle action(Action::create("ValueNodeDynamicListInsert"));
 
@@ -332,8 +330,6 @@ Action::ValueNodeDynamicListInsertSmart::prepare()
 			}
 		}
 
-		if (is_anim_share_list)
-    		return;
 		// Now we set the activepoint up and then we'll be done
 		Action::Handle action(Action::create("ActivepointSetOn"));
 

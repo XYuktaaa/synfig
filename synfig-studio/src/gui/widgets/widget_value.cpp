@@ -375,6 +375,11 @@ Widget_ValueBase::set_value(const synfig::ValueBase &data)
 			color_widget->show();
 		}
 		else
+    	if (type == type_anim_share)
+    	{
+        	label->hide();
+    	}
+		else
 		{
 			label->show();
 		}

@@ -125,7 +125,7 @@ ValueBase ValueNode_AnimShareList::operator()(Time t) const {
 
 String ValueNode_AnimShareList::link_local_name(int i) const {
   assert(i >= 0 && (unsigned)i < list.size());
-  return strprintf(_("AnimShare %03d"), i + 1);
+  return strprintf(_("Share %03d"), i + 1);
 }
 
 LinkableValueNode *ValueNode_AnimShareList::create_new() const {
