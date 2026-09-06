@@ -881,7 +881,8 @@ ValueNode_Composite::get_children_vocab_vfunc()const
 			.set_hint("enum").set_static(true)
 			.add_enum_value(0,"forward",_("Forward"))
 			.add_enum_value(1,"reverse",_("Reverse"))
-			.add_enum_value(2,"random",_("Random")));
+			.add_enum_value(2,"centerout",_("CenterOut"))
+			.add_enum_value(3,"random",_("Random")));
 	}
 	else
 	if (type == type_transformation)
